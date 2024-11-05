@@ -1,0 +1,1684 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>CW-HRMS</title>
+
+   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   <!-- inject:css -->
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/bootstrap/bootstrap.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/daterangepicker.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/fontawesome.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/footable.standalone.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/fullcalendar@5.2.0.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/jquery-jvectormap-2.0.5.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/jquery.mCustomScrollbar.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/leaflet.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/line-awesome.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/magnific-popup.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/MarkerCluster.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/MarkerCluster.Default.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/select2.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/slick.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/star-rating-svg.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/trumbowyg.min.css">
+
+   <link rel="stylesheet" href="assets/vendor_assets/css/wickedpicker.min.css">
+
+   <link rel="stylesheet" href="style.css">
+
+   <!-- endinject -->
+
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+
+   <!-- Fonts -->
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+
+<body class="layout-light side-menu">
+   <div class="mobile-search">
+      <form action="/" class="search-form">
+         <img src="img/svg/search.svg" alt="search" class="svg">
+         <input class="form-control me-sm-2 box-shadow-none" type="search" placeholder="Search..." aria-label="Search">
+      </form>
+   </div>
+   <div class="mobile-author-actions"></div>
+   <nav class="navbar navbar-light">
+      <div class="navbar-left">
+         <div class="logo-area">
+            <a class="navbar-brand" href="index.html">
+               <!-- <img class="dark" src="img/logo-dark.png" alt="logo"> -->
+<!--                <img class="light" src="img/logo-white.png" alt="logo">
+   
+ -->          
+            <h4>CW-HRMS</h4>
+           </a>
+
+         </div>
+         <div class="top-menu">
+            <div class="hexadash-top-menu position-relative">
+               <ul class="d-flex align-items-center flex-wrap">
+                  <li class="has-subMenu">
+                     <li class="has-subMenux d-flex align-items-center gap-1">
+                        <span><i class="uil uil-create-dashboard"></i></span>
+                        <a href="#" class="">
+                           Dashboard
+                        </a>
+                     </li>
+                  </li>  
+                     <li class="has-subMenu">
+                        <a href="#" class="">Attendance
+                        </a>
+                        <ul class="subMenu">
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Month Setup</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Shrink Data</span>
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Manually Count</span>
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Attendance List</span>
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Att Summary</span>
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">In-Out Report</span>
+                              </a>
+                           </li>
+
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Manual Report</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Monthly Status</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Out Duty</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Out Duty List</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Out Duty Report</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="editors.html" class="">
+                                 
+                                 <span class="menu-text">Overtime Report</span>
+                              </a>
+                           </li>
+
+                        </ul>
+                     </li>
+                   </li>  
+                  <li class="has-subMenu">
+                     <a href="#" class="">Leave</a>
+                     <ul class="subMenu">
+                        <li class="l_sidebar">
+                           <a href="#" data-layout="light">Configuration
+                           </a>
+                        </li>
+                        <li class="l_sidebar">
+                           <a href="#" data-layout="dark">Application
+                           </a>
+                        </li>
+                        <li class="l_navbar">
+                           <a href="#" data-layout="side" class="">Short Leave</a>
+                        </li>
+                        <li class="layout">
+                           <a href="../rtl">Leave Approval</a>
+                        </li>
+                        <li class="layout">
+                           <a href="../ltr">Short Lv Approval</a>
+                        </li>
+                        <li class="layout">
+                           <a href="../ltr">All Leave List</a>
+                        </li>
+                        <li class="layout">
+                           <a href="../ltr">Lv Status Reports</a>
+                        </li>
+                     </ul>
+                  </li>
+
+                  <li class="mega-item has-subMenu">
+                     <a href="#" class="">Payroll</a>
+                     <ul class="megaMenu-wrapper megaMenu-wide">
+                        <li>
+                           <span class="mega-title">Salary</span>
+                           <ul>
+                              <li>
+                                 <a class="" href="alert.html">Salary Set Entry Panel</a>
+                              </li>
+                              <li>
+                                 <a class="" href="avatar.html">Allowance Calculation</a>
+                              </li>
+                              <li>
+                                 <a class="" href="badge.html">Monthly Salary Generate</a>
+                              </li>
+                              <li>
+                                 <a class="" href="breadcrumbs.html">Seperation Generate</a>
+                              </li>
+                              <li>
+                                 <a class="" href="buttons.html">Monthly Salary Sheet</a>
+                              </li>
+                              <li>
+                                 <a class="" href="cards.html">Monthly Salary Summary</a>
+                              </li>
+                              <li>
+                                 <a class="" href="carousel.html">Only Overtime Sheet</a>
+                              </li>
+                              <li>
+                                 <a class="" href="checkbox.html">Seperation Salary Sheet</a>
+                              </li>
+                              <li>
+                                 <a class="" href="collapse.html">Promotion Entry Panel</a>
+                              </li>
+                              <li>
+                                 <a class="" href="collapse.html">Promotion List Report</a>
+                              </li>
+                              <li>
+                                 <a class="" href="comments.html">Increment Entry Panel</a>
+                              </li>
+                              <li>
+                                 <a class="" href="comments.html">Increment List Report</a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <span class="mega-title">Advance</span>
+                           <ul>
+                              <li>
+                                 <a class="" href="dashboard-base.html">Advance Entry Panel
+                                 </a>
+                              </li>
+                              <li>
+                                 <a class="" href="date-picker.html">Advance Settings</a>
+                              </li>
+                              <li>
+                                 <a class="" href="drawer.html">Advance Reports</a>
+                              </li>
+
+                              <li>
+                                 <span class="mega-title">Provident Fund(PF)
+                                 </span>
+                                 <ul>
+                                    <li>
+                                       <a class="" href="slider.html">PF Setting</a>
+                                    </li>
+                                    <li>
+                                       <a class="" href="spin.html">PF Entry Panel</a>
+                                    </li>
+                                    <li>
+                                       <a class="" href="statistics.html">PF Calculation</a>
+                                    </li>
+                                    <li>
+                                       <a class="" href="steps.html">FDR</a>
+                                    </li>
+                                    <li>
+                                       <a class="" href="switch.html">PF Reprots</a>
+                                    </li>
+                                 </ul>
+                              </li>
+
+                           </ul>
+                        </li>
+                        <li>
+                           <span class="mega-title">Bouns</span>
+                           <ul>
+                              <li>
+                                 <a class="" href="modal.html">Bonus Setup</a>
+                              </li>
+                              <li>
+                                 <a class="" href="notifications.html">B.Month Setup</a>
+                              </li>
+                              <li>
+                                 <a class="" href="page-header.html">B.Generate</a>
+                              </li>
+                              <li>
+                                 <a class="" href="pagination.html">B.Rise & Fall</a>
+                              </li>
+                              <li>
+                                 <a class="" href="progressbar.html">Bonus Sheet</a>
+                              </li>
+                              <li>
+                                 <a class="" href="radio.html">B.Summary</a>
+                              </li>
+                              <li>
+                                 <a class="" href="rate.html">B.Miss Sheet</a>
+                              </li>
+                              <li>
+                                 <a class="" href="result.html">Result</a>
+                              </li>
+                              <li>
+                                 <a class="" href="select.html">Select</a>
+                              </li>
+                              <li>
+                                 <a class="" href="skeleton.html">Skeleton</a>
+                              </li>
+                              <li>
+                                 <a class="" href="time-picker.html">Timepicker</a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <span class="mega-title">Vat and Tax
+                           </span>
+                           <ul>
+                              <li>
+                                 <a class="" href="modal.html">Allowance Calculation</a>
+                              </li>
+                              <li>
+                                 <a class="" href="notifications.html">Vat&Tax Rate Settings</a>
+                              </li>
+                              <li>
+                                 <a class="" href="page-header.html">Tax Free Allowance</a>
+                              </li>
+                              <li>
+                                 <a class="" href="pagination.html">Rebatable Rate Settings</a>
+                              </li>
+                              <li>
+                                 <a class="" href="progressbar.html">Tax Years Setup                                 </a>
+                              </li>
+                              <li>
+                                 <a class="" href="radio.html">Investment</a>
+                              </li>
+                              <li>
+                                 <a class="" href="rate.html">Tax Generation</a>
+                              </li>
+                              <li>
+                                 <a class="" href="result.html">Tax Repots</a>
+                              </li>
+                           </ul>
+                        </li>
+
+                     </ul>
+                  </li>
+
+                  <li class="mega-item has-subMenu">
+                     <a href="#" class="">Personnel</a>
+                     <ul class="megaMenu-wrapper megaMenu-small">
+                        <li>
+                           
+                              <p class="menu-text text-center fw-bold">Employee Information
+                              </p>
+                         
+                           <ul>
+                              <li>
+                                 <a href="changelog.html" class="">
+                                    <span class="menu-text">Employee Entry Panel</span>
+                                    <span class="badge badge-info-10 menuItem rounded-pill">1.1.2</span>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="profile-setting.html" class="">
+                                    <span class="menu-text">All Employee List</span>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="gallery.html" class="">
+                                    <span class="menu-text">Employee Profile Report</span>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="gallery2.html" class="">
+                                    <span class="menu-text">Employee List Report</span>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="pricing.html" class="">
+                                    <span class="menu-text">Seperation Entry Panel</span>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="banner.html" class="">
+                                    <span class="menu-text">Seperation List Report</span>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="testimonial.html" class="">
+                                    <span class="menu-text">Man Power Status Report
+                                    </span>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="faq.html" class="">
+                                    <span class="menu-text">Contact List Report</span>
+                                 </a>
+                              </li>
+
+                              <li>
+                                 <a href="search.html" class="">
+                                    <span class="menu-text">Emp. ID Card Report</span>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="blank.html" class="">
+                                    <span class="menu-text">Blood Group Report</span>
+                                 </a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p class="menu-text text-center fw-bold">Roster Information
+                           </p>
+                           <ul>
+                              <li>
+                                 <a href="support.html" class="">
+                                    <span class="menu-text">Roster Create Panel</span>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="blog.html" class="">Roster Extend Panel</a>
+                              </li>
+                              <li>
+                                 <a href="blog2.html" class="">Roster View & Remove</a>
+                              </li>
+                              <li>
+                                 <a href="blog3.html" class="">Roster Transfer Panel</a>
+                              </li>
+                              <li>
+                                 <a href="blog-details.html" class="">Roster Missing Panel
+
+                                    Details</a>
+                              </li>
+                              <li>
+                                 <a href="course.html" class="">Place Assign Panel</a>
+                              </li>
+                              <li>
+                                 <a href="course-details.html" class="">Roster Manage Report
+                                    Details</a>
+                              </li>
+                              <li>
+                                 <a href="terms.html" class="">
+                                    <span class="menu-text">Terms &amp; Roster Report By Date Range</span>
+                                 </a>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+
+                  <li class="has-subMenu">
+                     <a href="#" class="">Users
+                     </a>
+                     <ul class="subMenu">
+                        <li>
+                           <a href="editors.html" class="">
+                              
+                              <span class="menu-text">User Account</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="editors.html" class="">
+                              
+                              <span class="menu-text">C. Password</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="editors.html" class="">
+                              
+                              <span class="menu-text">User Privilege</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="editors.html" class="">
+                              
+                              <span class="menu-text">Auth Access </span>
+                           </a>
+                        </li> 
+                     </ul>
+                  </li>
+
+               </ul>
+            </div>
+
+         </div>
+      </div>
+      <!-- ends: navbar-left -->
+      <div class="navbar-right">
+         
+         <!-- ends: .navbar-right__menu -->
+         <div class="navbar-right__mobileAction d-md-none">
+            <a href="#" class="btn-search">
+               <img src="img/svg/search.svg" alt="search" class="svg feather-search">
+               <img src="img/svg/x.svg" alt="x" class="svg feather-x"></a>
+            <a href="#" class="btn-author-action">
+               <img class="svg" src="img/svg/more-vertical.svg" alt="more-vertical"></a>
+         </div>
+      <ul class="navbar-right__menu">
+            <!-- ends: nav-message -->
+            <li class="nav-notification">
+               <div class="dropdown-custom">
+                  <a href="javascript:;" class="nav-item-toggle icon-active">
+                     <img class="svg" src="img/svg/alarm.svg" alt="img">
+                  </a>
+                  <div class="dropdown-parent-wrapper">
+                     <div class="dropdown-wrapper">
+                        <h2 class="dropdown-wrapper__title">Notifications <span class="badge-circle badge-warning ms-1">4</span></h2>
+                        <ul>
+                           <li class="nav-notification__single nav-notification__single--unread d-flex flex-wrap">
+                              <div class="nav-notification__type nav-notification__type--primary">
+                                 <img class="svg" src="img/svg/inbox.svg" alt="inbox">
+                              </div>
+                              <div class="nav-notification__details">
+                                 <p>
+                                    <a href="" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
+                                    <span>sent you a message</span>
+                                 </p>
+                                 <p>
+                                    <span class="time-posted">5 hours ago</span>
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="nav-notification__single nav-notification__single--unread d-flex flex-wrap">
+                              <div class="nav-notification__type nav-notification__type--secondary">
+                                 <img class="svg" src="img/svg/upload.svg" alt="upload">
+                              </div>
+                              <div class="nav-notification__details">
+                                 <p>
+                                    <a href="" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
+                                    <span>sent you a message</span>
+                                 </p>
+                                 <p>
+                                    <span class="time-posted">5 hours ago</span>
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="nav-notification__single nav-notification__single--unread d-flex flex-wrap">
+                              <div class="nav-notification__type nav-notification__type--success">
+                                 <img class="svg" src="img/svg/log-in.svg" alt="log-in">
+                              </div>
+                              <div class="nav-notification__details">
+                                 <p>
+                                    <a href="" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
+                                    <span>sent you a message</span>
+                                 </p>
+                                 <p>
+                                    <span class="time-posted">5 hours ago</span>
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="nav-notification__single nav-notification__single d-flex flex-wrap">
+                              <div class="nav-notification__type nav-notification__type--info">
+                                 <img class="svg" src="img/svg/at-sign.svg" alt="at-sign">
+                              </div>
+                              <div class="nav-notification__details">
+                                 <p>
+                                    <a href="" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
+                                    <span>sent you a message</span>
+                                 </p>
+                                 <p>
+                                    <span class="time-posted">5 hours ago</span>
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="nav-notification__single nav-notification__single d-flex flex-wrap">
+                              <div class="nav-notification__type nav-notification__type--danger">
+                                 <img src="img/svg/heart.svg" alt="heart" class="svg">
+                              </div>
+                              <div class="nav-notification__details">
+                                 <p>
+                                    <a href="" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
+                                    <span>sent you a message</span>
+                                 </p>
+                                 <p>
+                                    <span class="time-posted">5 hours ago</span>
+                                 </p>
+                              </div>
+                           </li>
+                        </ul>
+                        <a href="" class="dropdown-wrapper__more">See all incoming activity</a>
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <!-- ends: .nav-notification -->
+            <li class="nav-settings">
+               <div class="dropdown-custom">
+                  <a href="javascript:;" class="nav-item-toggle">
+                     <img src="img/setting.png" alt="setting">
+                  </a>
+                  <div class="dropdown-parent-wrapper">
+                     <div class="dropdown-wrapper dropdown-wrapper--large">
+                        <ul class="list-settings">
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/mail.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link">Department</a>
+                                 </h6>
+                                 <p>Introducing Increment subscriptions </p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/color-palette.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link">Designation</a>
+                                 </h6>
+                                 <p>Third party themes that are compatible</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/home.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link">Grade</a>
+                                 </h6>
+                                 <p>We handle billions of dollars</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/video-camera.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link">Shift</a>
+                                 </h6>
+                                 <p>Share planning visuals with clients</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/document.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link">Qualification</a>
+                                 </h6>
+                                 <p>Centralize content gethering and editing</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/microphone.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link"> Religion</a>
+                                 </h6>
+                                 <p>Plan user flows &amp; test scenarios</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/microphone.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link"> District</a>
+                                 </h6>
+                                 <p>Plan user flows &amp; test scenarios</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/microphone.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link"> Thana</a>
+                                 </h6>
+                                 <p>Plan user flows &amp; test scenarios</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/microphone.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link"> Stamp Deduction</a>
+                                 </h6>
+                                 <p>Plan user flows &amp; test scenarios</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/microphone.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link"> Line/Group</a>
+                                 </h6>
+                                 <p>Plan user flows &amp; test scenarios</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/microphone.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link"> Company
+                                    </a>
+                                 </h6>
+                                 <p>Plan user flows &amp; test scenarios</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/microphone.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link"> Others
+                                    </a>
+                                 </h6>
+                                 <p>Plan user flows &amp; test scenarios</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/microphone.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link"> Floor
+                                    </a>
+                                 </h6>
+                                 <p>Plan user flows &amp; test scenarios</p>
+                              </div>
+                           </li>
+                           <li class="d-flex">
+                              <div class="me-3"><img src="img/microphone.png" alt=""></div>
+                              <div class="flex-grow-1">
+                                 <h6>
+                                    <a href="" class="stretched-link"> Business Type
+                                    </a>
+                                 </h6>
+                                 <p>Plan user flows &amp; test scenarios</p>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li class="nav-author">
+               <div class="dropdown-custom">
+                  <a href="javascript:;" class="nav-item-toggle"><img src="man.jpg" alt="" class="rounded-circle">
+                     <span class="nav-item__title">Nipun<i class="las la-angle-down nav-item__arrow"></i></span>
+                  </a>
+                  <div class="dropdown-parent-wrapper">
+                     <div class="dropdown-wrapper">
+                        <div class="nav-author__info">
+                           <div class="author-img">
+                              <img src="man.jpg" alt="" class="rounded-circle">
+                           </div>
+                           <div>
+                              <h6>Nipun Mitra</h6>
+                              <span>Frontend Developer</span>
+                           </div>
+                        </div>
+                        <div class="nav-author__options">
+                           <ul>
+                              <li>
+                                 <a href="">
+                                    <i class="uil uil-user"></i> Profile</a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <i class="uil uil-setting"></i>
+                                    Settings</a>
+                              </li>
+                             
+                           </ul>
+                           <a href="" class="nav-author__signout">
+                              <i class="uil uil-sign-out-alt"></i> Sign Out</a>
+                        </div>
+                     </div>
+                     <!-- ends: .dropdown-wrapper -->
+                  </div>
+               </div>
+            </li>
+            <!-- ends: .nav-author -->
+         </ul></div>
+      <!-- ends: .navbar-right -->
+   </nav>
+   <main class="main-content">
+      <div class="Dashbord">
+         <div class="crm mb-25">
+            <div class="container-fluid">
+
+               <div class="row mt-2">
+                  <div class="col-lg-7">
+
+                  </div>
+                  <div class="col-lg-5">
+                     <form action="" method="post">
+                        <div class="dm-date-picker d-flex justify-content-end gap-1 w-100">
+                           <div class="form-group mb-0 form-group-calender">
+                              <div class="position-relative">
+                                 <input type="text" class="form-control form-control-default" id="datepicker4" placeholder="January 20, 2018">
+                                 <a href="#"><img class="svg" src="img/svg/calendar.svg" alt="calendar"></a>
+                              </div>
+                           </div>
+                           <button style="line-height: 32px; display: block;" class="btn btn-info btn-default btn-squared "><i class="fas fa-search"></i>
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+
+               <div class="row mt-2">
+                  <div class="col-lg-8  d-block d-lg-flex">
+                     <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 mb-25 d-block">
+                           <div class="ap-po-details ap-po-details--luodcy  overview-card-shape radius-xl d-flex justify-content-between">
+                              <div class=" ap-po-details-content d-flex flex-wrap justify-content-between w-100">
+                                 <div class="ap-po-details__titlebar">
+                                    <p class="fs-6 fw-bold">Total Employee</p>
+                                    <h1>50</h1>
+                                    <div class="ap-po-details-time">
+                                       <span class="color-success"><i class="las la-arrow-up"></i>
+                                          <strong>10%</strong></span>
+                                       <small></small>
+                                    </div>
+                                 </div>
+                                 <div class="ap-po-details__icon-area color-info">
+                                    <i class="uil uil-user"></i>
+                                 </div>
+                              </div>
+                     
+                           </div>
+                           <!-- Card 1 End  -->
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 mb-25">
+                           <!-- Card 2 -->
+                           <div class="ap-po-details ap-po-details--luodcy  overview-card-shape radius-xl d-flex justify-content-between">
+                              <div class=" ap-po-details-content d-flex flex-wrap justify-content-between w-100">
+                                 <div class="ap-po-details__titlebar">
+                                    <p class="fs-6 fw-bold">Today's Present</p>
+                                    <h1>25</h1>
+                                    <div class="ap-po-details-time">
+                                       <span class="color-success"><i class="las la-arrow-up"></i>
+                                          <strong>50%</strong></span>
+                                    </div>
+                                 </div>
+                                 <div class="ap-po-details__icon-area color-success">
+                                    <i class="uil uil-user-check"></i>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- Card 2 End  -->
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 mb-25">
+                           <!-- Card 2 -->
+                           <div class="ap-po-details ap-po-details--luodcy  overview-card-shape radius-xl d-flex justify-content-between">
+                              <div class=" ap-po-details-content d-flex flex-wrap justify-content-between w-100">
+                                 <div class="ap-po-details__titlebar">
+                                    <p class="fs-6 fw-bold">Today's Absent</p>
+                                    <h1>25</h1>
+                                    <div class="ap-po-details-time">
+                                       <span class="color-danger"><i class="las la-arrow-up"></i>
+                                          <strong>50%</strong></span>
+                                    </div>
+                                 </div>
+                                 <div class="ap-po-details__icon-area color-danger">
+                                    <i class="uil uil-user-minus"></i>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- Card 2 End  -->
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 mb-25">
+                           <!-- Card 3 -->
+                           <div class="ap-po-details ap-po-details--luodcy  overview-card-shape radius-xl d-flex justify-content-between">
+                              <div class=" ap-po-details-content d-flex flex-wrap justify-content-between w-100">
+                                 <div class="ap-po-details__titlebar">
+                                    <p class="fs-6 fw-bold"> Today's Late
+                                    </p>
+                                    <h1>25</h1>
+                                    <div class="ap-po-details-time">
+                                       <span class="color-danger"><i class="las la-arrow-down"></i>
+                                          <strong>5%</strong></span>
+                                    </div>
+                                 </div>
+                                 <div class="ap-po-details__icon-area color-warning">
+                                    <i class="uil uil-stopwatch-slash"></i>
+                                 </div>
+                              </div>
+                        
+                           </div>
+                           <!-- Card 3 End  -->
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 mb-25">
+                           <!-- Card 4  -->
+                           <div class="ap-po-details ap-po-details--luodcy  overview-card-shape radius-xl d-flex justify-content-between">
+                              <div class=" ap-po-details-content d-flex flex-wrap justify-content-between w-100">
+                                 <div class="ap-po-details__titlebar">
+                                    <p class="fs-6 fw-bold">Today's Leave</p>
+                                    <h1>5</h1>
+                                    <div class="ap-po-details-time">
+                                       <span class="color-success"><i class="las la-arrow-up"></i>
+                                          <strong>2%</strong></span>
+                                    </div>
+                                 </div>
+                                 <div class="ap-po-details__icon-area color-primary">
+                                    <i class="uil uil-calendar-slash"></i>
+                        
+                                 </div>
+                              </div>
+                        
+                           </div>
+                           <!-- Card 4 End  -->
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 mb-25">
+                           <!-- Card 4  -->
+                           <div class="ap-po-details ap-po-details--luodcy  overview-card-shape radius-xl d-flex justify-content-between">
+                              <div class=" ap-po-details-content d-flex flex-wrap justify-content-between w-100">
+                                 <div class="ap-po-details__titlebar">
+                                    <p class="fs-6 fw-bold">W/H Off Duty</p>
+                                    <h1>5</h1>
+                                    <div class="ap-po-details-time">
+                                       <span class="color-success"><i class="las la-arrow-up"></i>
+                                          <strong>2%</strong></span>
+                                    </div>
+                                 </div>
+                                 <div class="ap-po-details__icon-area color-warning">
+                                    <i class="uil uil-bag"></i>
+                        
+                                 </div>
+                              </div>
+                        
+                           </div>
+                           <!-- Card 4 End  -->
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 mb-25 d-block">
+                     <div class="card border-0 px-25 h-100">
+                        <div class="card-header px-0 border-0">
+                           <h6>Last 7 Days Attendance Ratio</h6>
+                           
+                       
+                        </div>
+
+                        <ul class="legend-static mb-30 mt-1 d-flex justify-content-center">
+                           <li class="custom-label">
+                              <span class="bg-primary"></span>Present
+                           </li>
+                           <li class="custom-label">
+                              <span class="bg-secondary"></span>Absent
+                           </li>
+                        </ul>
+                        <div class="card-body p-0 pb-sm-25">
+                           <div class="tab-content">
+                              <div class="tab-pane active show" id="salesgrowth" role="tabpanel"
+                                 aria-labelledby="salesgrowth-tab">
+                                 <div class="parentContainer">
+                                    <div>
+                                       <canvas id="salesGrowthToday"></canvas>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!---Today Costing Over time start---->
+                  <!---Attendance Summary start---->
+                  <div class="col-lg-12 col-md-12 col-sm-12 mb-25">
+
+                     <div class="card border-0 px-25">
+                        <div class="card-header px-0 border-0">
+                           <h2 class="mt-3 mb-4">Daily Attendance Summary</h2>
+                        </div>
+                        <div class="card-body p-0">
+                           <div class="tab-content">
+                              <div class="tab-pane fade active show" id="t_selling-today" role="tabpanel"
+                                 aria-labelledby="t_selling-today-tab">
+                                 <div class="selling-table-wrap">
+                                    <div class="table-responsive">
+                                       <table class="table table-border">
+                                          <thead>
+                                             <tr>
+                                                <th>Department </th>
+                                                <th>Total Employee</th>
+                                                <th>Male</th>
+                                                <th>Female</th>
+                                                <th>Present</th>
+                                                <th>Present %</th>
+                                                <th>Absent</th>
+                                                <th>Absent %</th>
+                                                <th>Late</th>
+                                                <th>Late %</th>
+                                                <th>Leave</th>
+                                                <th>leave %</th>
+                                                <th>Off day</th>
+                                                <th>Off day %</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                <td>Oparetor
+                                                </td>
+                                                <td>500</td>
+                                                <td>300</td>
+                                                <td>200</td>
+                                                <td>490</td>
+                                                <td>99%</td>
+                                                <td>10</td>
+                                                <td>1%</td>
+                                                <td>10</td>
+                                                <td>1%</td>
+                                                <td>0</td>
+                                                <td>0%</td>
+                                                <td>0</td>
+                                                <td>0%</td>
+                                             </tr>
+
+                                             <tr>
+                                                <td>Finacial
+                                                </td>
+                                                <td>300</td>
+                                                <td>100</td>
+                                                <td>120</td>
+                                                <td>490</td>
+                                                <td>99%</td>
+                                                <td>10</td>
+                                                <td>1%</td>
+                                                <td>10</td>
+                                                <td>1%</td>
+                                                <td>0</td>
+                                                <td>0%</td>
+                                                <td>0</td>
+                                                <td>0%</td>
+                                             </tr>
+
+                                             <tr>
+                                                <td>Manager
+                                                </td>
+                                                <td>100</td>
+                                                <td>300</td>
+                                                <td>300</td>
+                                                <td>190</td>
+                                                <td>99%</td>
+                                                <td>10</td>
+                                                <td>1%</td>
+                                                <td>10</td>
+                                                <td>1%</td>
+                                                <td>3</td>
+                                                <td>0%</td>
+                                                <td>1</td>
+                                                <td>0%</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+                  <!---Attendance Summary End---->
+
+
+
+             
+
+                  <!---Today Costing Over time End ---->
+
+                 <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12 mb-25 d-block">
+                     <div class="card border-0 cashflowChart2">
+                        <div class="card-header">
+                           <h6>Monthly New Join & Release</h6>
+                        </div>
+                        <!-- <div class="card-header border-0 px-25 pt-25 pb-15">
+                           <div class="chartLine-po-details__overview-content w-100">
+                              <div class=" chartLine-po-details__content d-flex flex-wrap justify-content-between">
+                                 <div class="chartLine-po-details__titlebar">
+                                    <h1>Monthly New Join & Release</h1>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div> -->
+                        <!-- ends: .card-header -->
+                        <div style="height: 271px;" class="card-body pt-0 ">
+                           <div class="cashflow-chart">
+                              <ul class="legend-static mb-30 mt-1 d-flex justify-content-center">
+                                 <li class="custom-label">
+                                    <span class="bg-primary"></span>New Join
+                                 </li>
+                                 <li class="custom-label">
+                                    <span class="bg-secondary"></span>Relase
+                                 </li>
+                              </ul>
+                              <div class="parentContainer">
+
+
+                                 <div>
+                                    <canvas id="profitGrowthToday"></canvas>
+                                 </div>
+
+
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ends: .card-body -->
+                     </div>
+
+                  </div>
+
+                  <div class="col-lg-6 d-block ">
+                     <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 mb-25 d-block ">
+                           <div class="device-chart-box">
+      
+                              <div class="card border-0 MaleFemale">
+                                 <div class="card-header">
+                                    <h6>Male Female Ratio</h6>
+                                 </div>
+                                 <!-- ends: .card-header -->
+                                 <div class="card-body pt-20 pb-30">
+                                    <div class="tab-content">
+                                       <div class="tab-pane fade active show" id="se_device-today" role="tabpanel"
+                                          aria-labelledby="se_device-today-tab">
+                                          <div class="device-pieChart-wrap position-relative">
+      
+                                             <div class="">
+                                                <div class="salesDonutToday"></div>
+                                             </div>
+      
+                                          </div>
+                                          <div class="session-wrap session-wrap--top--4">
+                                             <div class="session-single">
+                                                <div class="chart-label">
+                                                   <span class="label-dot dot-primary"></span>
+                                                   Male
+                                                </div>
+                                             </div>
+                                             <div class="session-single">
+                                                <div class="chart-label">
+                                                   <span class="label-dot dot-info"></span>
+                                                   Female
+                                                </div>
+                                             </div>
+      
+                                          </div>
+                                       </div>
+      
+                                    </div>
+                                    <!-- ends: .session-wrap -->
+                                 </div>
+                                 <!-- ends: .card-body -->
+                              </div>
+      
+                           </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 mb-25 d-block ">
+                           <div class="device-chart-box">
+      
+                              <div class="card border-0 MaleFemale">
+                                 <div class="card-header">
+                                    <h6>Staff Worker Ratio</h6>
+                                 </div>
+                                 <!-- ends: .card-header -->
+                                 <div class="card-body pt-20 pb-30">
+                                    <div class="tab-content">
+                                       <div class="tab-pane fade active show" id="se_device-today" role="tabpanel"
+                                          aria-labelledby="se_device-today-tab">
+                                          <div class="device-pieChart-wrap position-relative">
+      
+                                             <div class="">
+                                                <div class="StapWorkerRatio"></div>
+                                             </div>
+      
+                                          </div>
+                                          <div class="session-wrap session-wrap--top--4">
+                                             <div class="session-single">
+                                                <div class="chart-label">
+                                                   <span class="label-dot dot-primary"></span>
+                                                   Staff
+                                                </div>
+                                             </div>
+                                             <div class="session-single">
+                                                <div class="chart-label">
+                                                   <span class="label-dot dot-info"></span>
+                                                   Worker
+                                                </div>
+                                             </div>
+      
+                                          </div>
+                                       </div>
+      
+                                    </div>
+                                    <!-- ends: .session-wrap -->
+                                 </div>
+                                 <!-- ends: .card-body -->
+                              </div>
+      
+                           </div>
+                        </div>
+                     </div>
+                     <!-------Stap Workar Ratio------>
+                  </div>
+
+                 </div> 
+
+
+                  <!-----Start -->
+                  <div class="col-lg-8 col-md-12 col-sm-12 mb-25">
+                     <!-- Card 1  -->
+                     <div class="ap-po-details ap-po-details--3 radius-xl d-flex">
+                        <div class="row">
+                           <div class="col-lg-4 overview-content overview-content3 bg-none mb-3">
+                              <div class="d-flex">
+                                 <div class="revenue-chart-box__Icon me-20 order-bg-opacity-primary color-primary">
+                                    <i class="uil uil-user"></i>
+                                 </div>
+                                 <div class="d-flex align-items-start flex-wrap">
+                                    <div class="me-25">
+                                       <h2>530</h2>
+                                       <p class="mt-1 mb-0">Regular Emp
+                                       </p>
+                                    </div>
+   
+                                    <!-- <div class="ap-po-details bg-none">
+                                       <span class="color-success"><i class="las la-arrow-up"></i>
+                                          <strong>25.36%</strong></span>
+                                    </div> -->
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-4 overview-content overview-content3 bg-none mb-3">
+                              <div class="d-flex">
+                                 <div class="revenue-chart-box__Icon me-20 order-bg-opacity-secondary color-secondary">
+   
+                                    <i class="uil uil-user-minus"></i>
+                                 </div>
+                                 <div class="d-flex align-items-start flex-wrap">
+                                    <div class="me-25">
+                                       <h2>10</h2>
+                                       <p class="mt-1 mb-0">Released</p>
+                                    </div>
+   
+                                    <!-- <div class="ap-po-details bg-none">
+                                       <span class="color-success"><i class="las la-arrow-up"></i>
+                                          <strong>25.36%</strong></span>
+                                    </div> -->
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="col-lg-4 overview-content overview-content3 bg-none mb-3">
+                              <div class="d-flex">
+                                 <div class="revenue-chart-box__Icon me-20 order-bg-opacity-success color-success">
+   
+                                    <i class="uil uil-users-alt"></i>
+                                 </div>
+                                 <div class="d-flex align-items-start flex-wrap">
+                                    <div class="me-25">
+                                       <h2>540</h2>
+                                       <p class="mt-1 mb-0">Total</p>
+                                    </div>
+<!--    
+                                    <div class="ap-po-details bg-none">
+                                       <span class="color-success"><i class="las la-arrow-up"></i>
+                                          <strong>25.36%</strong></span>
+                                    </div> -->
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="col-lg-4 overview-content overview-content3 bg-none mb-3">
+                              <div class="d-flex">
+                                 <div class="revenue-chart-box__Icon me-20 order-bg-opacity-warning color-warning">
+   
+                                    <i class="uil uil-user-md"></i>
+                                 </div>
+                                 <div class="d-flex align-items-start flex-wrap">
+                                    <div class="me-25">
+                                       <h2>250</h2>
+                                       <p class="mt-1 mb-0">Male</p>
+                                    </div>
+   
+                                    <!-- <div class="ap-po-details bg-none">
+                                       <span class="color-danger"><i class="las la-arrow-down"></i>
+                                          <strong>25.36%</strong></span>
+                                    </div> -->
+                                 </div>
+                              </div>
+                           </div>
+                           
+                        <div class="col-lg-4 overview-content overview-content3 bg-none mb-3">
+                           <div class="d-flex">
+                              <div class="revenue-chart-box__Icon me-20 order-bg-opacity-warning color-warning">
+
+                                 <i class="uil uil-user-nurse"></i>
+                              </div>
+                              <div class="d-flex align-items-start flex-wrap">
+                                 <div class="me-25">
+                                    <h2>280</h2>
+                                    <p class="mt-1 mb-0">Female</p>
+                                 </div>
+
+                                 <!-- <div class="ap-po-details bg-none">
+                                    <span class="color-danger"><i class="las la-arrow-down"></i>
+                                       <strong>25.36%</strong></span>
+                                 </div> -->
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 overview-content overview-content3 bg-none mb-3">
+                           <div class="d-flex">
+                              <div class="revenue-chart-box__Icon me-20 order-bg-opacity-warning color-warning">
+
+                                 <i class="uil uil-clock-seven"></i>
+                              </div>
+                              <div class="d-flex align-items-start flex-wrap">
+                                 <div class="me-25">
+                                    <h2>497</h2>
+                                    <p class="mt-1 mb-0">Over Time</p>
+                                 </div>
+
+                                 <!-- <div class="ap-po-details bg-none">
+                                    <span class="color-danger"><i class="las la-arrow-down"></i>
+                                       <strong>25.36%</strong></span>
+                                 </div> -->
+                              </div>
+                           </div>
+                        </div>
+                        </div>
+                     </div>
+                     <!-- Card 1 End  -->
+                     <!-- Salary Comparison chat Start -->
+
+                     <div class="mt-25">
+                           <div class="card">
+                              <div class="card-header">
+                                 <div class="chartLine-po-details__titlebar">
+
+                                    <h1>Salary Comparison(Last 12th Month)</h1>
+                                 </div>
+                              </div>
+                              <div class="card-body">
+         
+                                 <div class="">
+                                    <div class="barChart"></div>
+                                 </div>
+         
+                              </div>
+                           </div>
+                     </div>
+                  <!-- Salary Comparison chat End -->
+
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-sm-12 mb-25">
+                     <div style="height:519px" class="card">
+                        <div class="card-header">
+                           <div class="chartLine-po-details__titlebar">
+                              <h1>Floor Wise Employee</h1>
+                           </div>
+                          
+                        </div>
+                        <div class="card-body">
+                           <style>
+                              #barChartHorizontal {
+                                 height: 33px;
+                              }
+                           </style>
+                           <div class="">
+                              <canvas id="barChartHorizontal"></canvas>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!---Salary Comparison Table Start ---->
+
+   
+                  <div class="col-12 mb-25">
+                     <!-- Card 1  -->
+                     <div class="ap-po-details ap-po-details--3 radius-xl d-flex py-25">
+                        <div class="col-lg-3 overview-content overview-content3 b-none bg-none mb-lg-0 mb-20">
+                           <div class="d-flex">
+                              <div class="revenue-chart-box__Icon me-20 bg-primary color-white rounded-circle">
+                                 <i class="uil uil-money-withdraw"></i>
+
+                              </div>
+                              <div class="d-flex align-items-start flex-wrap">
+                                 <div class="me-10">
+                                    <h1>7,000Tk</h2>
+                                       <p class="mt-1 mb-0">Today’s Salary</p>
+                                 </div>
+
+                                 <!-- <div class="ap-po-details bg-none">
+                                    <span class="color-success fs-14  d-inline-block mt-2"><i
+                                          class="las la-arrow-up"></i>
+                                       <strong>25.36%</strong></span>
+                                 </div> -->
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 overview-content overview-content3 bg-none b-none mb-lg-0 mb-20">
+                           <div class="d-flex">
+                              <div class="revenue-chart-box__Icon me-20 bg-info color-white rounded-circle">
+                                 <i class="uil uil-clock-eight"></i>
+                              </div>
+                              <div class="d-flex align-items-start flex-wrap">
+                                 <div class="me-10">
+                                    <h1>3,500Tk</h1>
+                                    <p class="mt-1 mb-0">Today's OT Amount</p>
+                                 </div>
+
+                                 <!-- <div class="ap-po-details bg-none">
+                                    <span class="color-success fs-14 d-inline-block mt-2"><i
+                                          class="las la-arrow-up"></i>
+                                       <strong>25.36%</strong></span>
+                                 </div> -->
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 overview-content overview-content3 bg-none b-none mb-lg-0 mb-20">
+                           <div class="d-flex">
+                              <div class="revenue-chart-box__Icon me-20 bg-success color-white rounded-circle">
+                                 <i class="uil uil-money-withdraw"></i>
+                              </div>
+                              <div class="d-flex align-items-start flex-wrap">
+                                 <div class="me-10">
+                                    <h1>80,200Tk</h1>
+                                    <p class="mt-1 mb-0">Last Month Costing</p>
+                                 </div>
+                                 <!-- <div class="ap-po-details bg-none">
+                                    <span class="color-success fs-14 d-inline-block mt-2"><i
+                                          class="las la-arrow-up"></i>
+                                       <strong>25.36%</strong></span>
+                                 </div> -->
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 overview-content overview-content3 bg-none b-none mb-lg-0 mb-20">
+                           <div class="d-flex">
+                              <div class="revenue-chart-box__Icon me-20 bg-warning color-white rounded-circle">
+                                 <i class="uil uil-money-bill"></i>
+                              </div>
+                              <div class="d-flex align-items-start flex-wrap">
+                                 <div class="me-10">
+                                    <h1>40,000Tk</h1>
+                                    <p class="mt-1 mb-0">Last Month OT Amount
+                                    </p>
+                                 </div>
+
+                                 <!-- <div class="ap-po-details bg-none">
+                                    <span class="color-danger fs-14 d-inline-block mt-2"><i
+                                          class="las la-arrow-down"></i>
+                                       <strong>25.36%</strong></span>
+                                 </div> -->
+                              </div>
+                           </div>
+                        </div>
+
+                     </div>
+                     <!-- Card 1 End  -->
+                  </div>
+
+               <div class="col-lg-12">
+
+                  <div class="card border-0">
+                     <div class="card-header">
+                        <h6>Total Overtime</h6>
+                     </div>
+
+                     <div class="card-body  mt-3">
+                        <div class="tab-content">
+                           <div class="tab-pane fade active show" id="st_matrics-today" role="tabpanel" aria-labelledby="st_matrics-today-tab">
+                              <div class="row">
+                                 <div class="col-lg-6 table-responsive">
+                                    <table class=" table table-bordered">
+                                       <thead>
+                                          <tr class="text-center">
+                                             
+                                             <th scope="col" colspan="3">Total Overtime (Monthly)
+                                             </th>
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <table class="table table-bordered table-hover">
+                                                   <tr>
+                                                      <td> OT Hour : <br> <strong>7H</strong> </td>
+                                                   </tr>
+                                                   <tr>
+                                                      <td> OT Amount : <br> <strong>3200Tk</strong></td>
+                                                   </tr>
+                                                </table>
+                                             </td>
+                                             <td>
+                                                <table class="table table-bordered table-hover">
+                                                   <tr>
+                                                      <td>Average : <br> <strong>45%</strong></td>
+                                                   </tr>
+                                                   <tr>
+                                                      <td>Regular OT Hour : <br> <strong>7H</strong></td>
+                                                   </tr>
+                                                   <tr>
+                                                      <td>OT Amount : <br><strong>3,200T  k</strong></td>
+                                                   </tr>
+                                                </table>
+                                             </td>
+                                             <td>
+                                                <table class="table table-bordered table-hover">
+                                                   <tr>
+                                                      <td>Extra OT Hr : <br> <strong>7H</strong></td>
+                                                   </tr>
+                                                  
+                                                   <tr>
+                                                      <td>Extra OT Amount : <br> <strong>3,400TK</strong></td>
+                                                   </tr>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </div>
+                                 <div class="col-lg-6 table-responsive">
+                                    <table class=" table table-bordered ">
+                                       <thead>
+                                          <tr class="text-center">
+                                             
+                                             <th scope="col" colspan="3">Total Overtime (Daily)
+                                             </th>
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <table class="table table-bordered table-hover">
+                                                   <tr>
+                                                      <td> OT Hour : <br> <strong>7H</strong> </td>
+                                                   </tr>
+                                                   <tr>
+                                                      <td> OT Amount : <br> <strong>32,540TK</strong></td>
+                                                   </tr>
+                                                </table>
+                                             </td>
+                                             <td>
+                                                <table class="table table-bordered table-hover">
+                                                   <tr>
+                                                      <td>Average : <br><strong>33%</strong></td>
+                                                   </tr>
+                                                   <tr>
+                                                      <td>Regular OT Hour : <br> <strong>7H</strong></td>
+                                                   </tr>
+                                                   <tr>
+                                                      <td>OT Amount : <br><strong>32,5400TK</strong></td>
+                                                   </tr>
+                                                </table>
+                                             </td>
+                                             <td>
+                                                <table class="table table-bordered table-hover">
+                                                   <tr>
+                                                      <td>Extra OT Hr :<br> <strong>7H</strong> </td>
+                                                   </tr>
+                                                   
+                                                   <tr>
+                                                      <td>Extra OT Amount : <br><strong>3,200Tk</strong></td>
+                                                   </tr>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </div>
+                                 
+                                 
+                              </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+
+                  <!-----Today’s Costing section Start---->
+
+                  <!-----Today’s Costing section End---->
+
+
+
+
+
+                  <!---Salary Comparison Table End------->
+
+               </div>
+               <!-- ends: .row -->
+
+               <!-- Start: .row -->
+
+               <div class="">
+                  <div class="row">
+
+
+                  </div>
+               </div>
+
+
+            </div>
+         </div>
+      </div>
+      <footer class="footer-wrapperx bg-white p-1">
+         <div class="footer-wrapper__inside">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="footer-copyright d-flex justify-content-center align-items-center p-3">
+                        <p class="mb-0"><span>©2024 Developed by</span><a href="https://www.codewareltd.com">Codeware LTD</a>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+   </main>
+   <div id="overlayer">
+      <div class="loader-overlay">
+         <div class="dm-spin-dots spin-lg">
+            <span class="spin-dot badge-dot dot-primary"></span>
+            <span class="spin-dot badge-dot dot-primary"></span>
+            <span class="spin-dot badge-dot dot-primary"></span>
+            <span class="spin-dot badge-dot dot-primary"></span>
+         </div>
+      </div>
+   </div>
+   <div class="overlay-dark-sidebar"></div>
+   <div class="customizer-overlay"></div>
+
+   <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBgYKHZB_QKKLWfIRaYPCadza3nhTAbv7c"></script>
+   <!-- inject:js-->
+   <script src="assets/vendor_assets/js/jquery/jquery-3.5.1.min.js"></script>
+   <script src="assets/vendor_assets/js/jquery/jquery-ui.js"></script>
+   <script src="assets/vendor_assets/js/bootstrap/popper.js"></script>
+   <script src="assets/vendor_assets/js/bootstrap/bootstrap.min.js"></script>
+   <script src="assets/vendor_assets/js/moment/moment.min.js"></script>
+   <script src="assets/vendor_assets/js/accordion.js"></script>
+   <script src="assets/vendor_assets/js/apexcharts.min.js"></script>
+   <script src="assets/vendor_assets/js/autoComplete.js"></script>
+   <script src="assets/vendor_assets/js/Chart.min.js"></script>
+   <script src="assets/vendor_assets/js/daterangepicker.js"></script>
+   <script src="assets/vendor_assets/js/drawer.js"></script>
+   <script src="assets/vendor_assets/js/dynamicBadge.js"></script>
+   <script src="assets/vendor_assets/js/dynamicCheckbox.js"></script>
+   <script src="assets/vendor_assets/js/footable.min.js"></script>
+   <script src="assets/vendor_assets/js/fullcalendar@5.2.0.js"></script>
+   <script src="assets/vendor_assets/js/google-chart.js"></script>
+   <script src="assets/vendor_assets/js/jquery-jvectormap-2.0.5.min.js"></script>
+   <script src="assets/vendor_assets/js/jquery-jvectormap-world-mill-en.js"></script>
+   <script src="assets/vendor_assets/js/jquery.countdown.min.js"></script>
+   <script src="assets/vendor_assets/js/jquery.filterizr.min.js"></script>
+   <script src="assets/vendor_assets/js/jquery.magnific-popup.min.js"></script>
+   <script src="assets/vendor_assets/js/jquery.peity.min.js"></script>
+   <script src="assets/vendor_assets/js/jquery.star-rating-svg.min.js"></script>
+   <script src="assets/vendor_assets/js/leaflet.js"></script>
+   <script src="assets/vendor_assets/js/leaflet.markercluster.js"></script>
+   <script src="assets/vendor_assets/js/loader.js"></script>
+   <script src="assets/vendor_assets/js/message.js"></script>
+   <script src="assets/vendor_assets/js/moment.js"></script>
+   <script src="assets/vendor_assets/js/muuri.min.js"></script>
+   <script src="assets/vendor_assets/js/notification.js"></script>
+   <script src="assets/vendor_assets/js/popover.js"></script>
+   <script src="assets/vendor_assets/js/select2.full.min.js"></script>
+   <script src="assets/vendor_assets/js/slick.min.js"></script>
+   <script src="assets/vendor_assets/js/trumbowyg.min.js"></script>
+   <script src="assets/vendor_assets/js/wickedpicker.min.js"></script>
+   <script src="assets/theme_assets/js/apexmain.js"></script>
+   <script src="assets/theme_assets/js/charts.js"></script>
+   <script src="assets/theme_assets/js/drag-drop.js"></script>
+   <script src="assets/theme_assets/js/footable.js"></script>
+   <script src="assets/theme_assets/js/full-calendar.js"></script>
+   <script src="assets/theme_assets/js/googlemap-init.js"></script>
+   <script src="assets/theme_assets/js/icon-loader.js"></script>
+   <script src="assets/theme_assets/js/jvectormap-init.js"></script>
+   <script src="assets/theme_assets/js/leaflet-init.js"></script>
+   <script src="assets/theme_assets/js/main.js"></script>
+   <!-- endinject-->
+</body>
+
+</html>

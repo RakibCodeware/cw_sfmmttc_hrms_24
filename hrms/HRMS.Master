@@ -1,0 +1,1579 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HRMS.master.cs" Inherits="SigmaERP.hrms.HRMS" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CW-HRMS</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
+    <%--      <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />--%>
+
+    <!-- inject:css -->
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/bootstrap/bootstrap.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/daterangepicker.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/fontawesome.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/footable.standalone.min.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/fullcalendar@5.2.0.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/jquery-jvectormap-2.0.5.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/jquery.mCustomScrollbar.min.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/leaflet.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/line-awesome.min.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/MarkerCluster.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/MarkerCluster.Default.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/select2.min.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/slick.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/star-rating-svg.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/trumbowyg.min.css">
+
+    <link rel="stylesheet" href="/hrms/assets/vendor_assets/css/wickedpicker.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- endinject -->
+
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-light">
+            <div class="navbar-left">
+                <div class="logo-area">
+                    <a class="navbar-brand" href="dashboard" runat="server">
+                        <!-- <img class="dark" src="img/logo-dark.png" alt="logo"> -->
+                        <!--                <img class="light" src="img/logo-white.png" alt="logo">
+   
+ -->
+                        <h4>CW-HRMS</h4>
+                    </a>
+
+                </div>
+                <div class="top-menu">
+                    <div class="hexadash-top-menu position-relative">
+                        <ul class="d-flex align-items-center flex-wrap">
+                            <li class="has-subMenu">
+                                <li class="has-subMenux d-flex align-items-center gap-1">
+                                    <span><i class="uil uil-create-dashboard"></i></span>
+                                    <a href="dashboard" runat="server">Dashboard</a>
+                                </li>
+                            </li>
+
+                            <% if (IsRouteExists("attendance"))
+                                { %>
+                            <li class="mega-item has-subMenu">
+                                <a href="attendance" class="">Attendance</a>
+                                <ul class="megaMenu-wrapper megaMenu-md">
+                                    <% if (IsRouteExists("attendance/month-setup") || IsRouteExists("attendance/processing") || IsRouteExists("attendance/manually-count") ||
+       IsRouteExists("attendance/list") || IsRouteExists("attendance/daily-summary-report") || IsRouteExists("attendance/daily-in-out-report") || IsRouteExists("attendance/manual-report") || IsRouteExists("attendance/monthly-report") || IsRouteExists("attendance/manpower-wise"))
+                                        { %>
+
+                                    <li class="bordered">
+                                        <span class="mega-title">Attendance</span>
+                                        <ul>
+                                            <% if (IsRouteExists("attendance/month-setup"))
+                                                { %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/month-setup" runat="server" class="">
+                                                    <span class="menu-text">Month Setup</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("attendance/processing"))
+                                                { %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/processing" runat="server" class="">
+                                                    <span class="menu-text">Attendance Processing</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("attendance/manually-count"))
+                                                { %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/manually-count" runat="server" class="">
+                                                    <span class="menu-text">Manually Count</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("attendance/list"))
+                                                { %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/list" runat="server" class="">
+                                                    <span class="menu-text">Attendance List</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("attendance/daily-summary-report"))
+                                                { %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/daily-summary-report" class="">
+                                                    <span class="menu-text">Att Summary</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("attendance/daily-in-out-report"))
+                                                { %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/daily-in-out-report" class="">
+                                                    <span class="menu-text">In-Out Report</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("attendance/manual-report"))
+                                                { %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/manual-report" class="">
+                                                    <span class="menu-text">Manual Report</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("attendance/monthly-report"))
+                                                { %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/monthly-report" class="">
+                                                    <span class="menu-text">Monthly Status</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("attendance/manpower-wise"))
+                                                { %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/manpower-wise" class="">
+                                                    <span class="menu-text">Manpower Wise Attendance</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                        </ul>
+                                    </li>
+                                    <%} %>
+                                    <% if (IsRouteExists("attendance/out-duty-add") || IsRouteExists("attendance/out-duty-list") || IsRouteExists("attendance/out-duty-approval") ||
+         IsRouteExists("attendance/out-duty-report") || IsRouteExists("attendance/absent-notification") || IsRouteExists("attendance/manpower-statement") || IsRouteExists("attendance/weekend-setup") || IsRouteExists("attendance/general-day-setup") || IsRouteExists("attendance/weekend-info-report") || IsRouteExists("attendance/attendance-analysis"))
+                                        { %>
+
+                                    <li class="bordered">
+                                        <span class="mega-title">Out Duty</span>
+                                        <ul>
+                                            <% if (IsRouteExists("attendance/out-duty-add"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/out-duty-add" class="">
+                                                    <span class="menu-text">Out Duty</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("attendance/out-duty-list"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/out-duty-list" class="">
+                                                    <span class="menu-text">Out Duty List</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("attendance/out-duty-approval"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/out-duty-approval" runat="server" class="">
+                                                    <span class="menu-text">Out Duty Approval</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("attendance/out-duty-report"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/out-duty-report" class="">
+                                                    <span class="menu-text">Out Duty Report</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("attendance/absent-notification"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/absent-notification" class="">
+                                                    <span class="menu-text">Absent Notification</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("attendance/manpower-statement"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/manpower-statement" class="">
+                                                    <span class="menu-text">Manpower Statement</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("attendance/weekend-setup"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/weekend-setup" class="">
+                                                    <span class="menu-text">Weekend Setup</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("attendance/general-day-setup"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/general-day-setup" class="">
+                                                    <span class="menu-text">General Day Setup</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("attendance/weekend-info-report"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/weekend-info-report" class="">
+                                                    <span class="menu-text">Weekend Info Report</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("attendance/attendance-analysis"))
+                                                { %>
+                                            <li>
+                                                <a href="attendance/attendance-analysis" class="">
+                                                    <span class="menu-text">Analysis Report</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                        </ul>
+                                    </li>
+
+                                    <%} %>
+
+                                    <% if (IsRouteExists("roster/create") || IsRouteExists("roster/extend") || IsRouteExists("roster/view-remove") ||
+      IsRouteExists("roster/transfer") || IsRouteExists("roster/missing") || IsRouteExists("roster/place-assign") || IsRouteExists("roster/report") || IsRouteExists("roster/report-by-date"))
+                                        { %>
+
+                                    <li class="bordered">
+                                        <span class="mega-title">Roster Information</span>
+                                        <ul>
+                                            <% if (IsRouteExists("roster/create"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="roster/create" runat="server">Roster Create</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("roster/extend"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="roster/extend" runat="server">Roster Extend</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("roster/view-remove"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="roster/view-remove" runat="server">Roster View & Remove</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("roster/transfer"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="roster/transfer" runat="server">Roster Transfer</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("roster/missing"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="roster/missing" runat="server">Roster Missing</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("roster/place-assign"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="roster/place-assign" runat="server">Place Assign</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("roster/report"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="roster/report" runat="server">Roster Manage Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("roster/report-by-date"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="roster/report-by-date" runat="server">Roster Report By Date Range</a>
+                                            </li>
+                                            <% } %>
+                                        </ul>
+                                    </li>
+                                    <%} %>
+
+                                    <!-- Add other sections here like Out Duty, Roster Information -->
+                                </ul>
+                            </li>
+                            <% } %>
+                            <%--                   <li class="mega-item has-subMenu">
+                     <a href="attendance" class="">Attendance
+                     </a>
+                     <ul  class="megaMenu-wrapper megaMenu-md">
+                        <li class="bordered">
+                           <span class="mega-title">Attendance</span>
+                           <ul>
+                               <% if (IsRouteExists("attendance/month-setup"))
+                                   { %>
+                               <li class="l_sidebar">
+                                   <a href="attendance/month-setup" runat="server" class="">
+                                       <span class="menu-text">Month Setup</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/processing"))
+                                   { %>
+                               <li class="l_sidebar">
+                                   <a href="attendance/processing" runat="server" class="">
+                                       <span class="menu-text">Attendance Processing</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/manually-count"))
+                                   { %>
+                               <li class="l_sidebar">
+                                   <a href="attendance/manually-count" runat="server" class="">
+                                       <span class="menu-text">Manually Count</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/list"))
+                                   { %>
+                               <li class="l_sidebar">
+                                   <a href="attendance/list" runat="server" class="">
+                                       <span class="menu-text">Attendance List</span>
+                                   </a>
+                               </li>
+                               <% } %>
+      
+                               <% if (IsRouteExists("attendance/daily-summary-report"))
+                                   { %>
+                               <li class="l_sidebar">
+                                   <a href="attendance/daily-summary-report" class="">
+                                       <span class="menu-text">Att Summary</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/daily-in-out-report"))
+                                   { %>
+                               <li class="l_sidebar">
+                                   <a href="attendance/daily-in-out-report" class="">
+                                       <span class="menu-text">In-Out Report</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/manual-report"))
+                                   { %>
+                               <li class="l_sidebar">
+                                   <a href="attendance/manual-report" class="">
+                                       <span class="menu-text">Manual Report</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/monthly-report"))
+                                   { %>
+                               <li class="l_sidebar">
+                                   <a href="attendance/monthly-report" class="">
+                                       <span class="menu-text">Monthly Status</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+
+                               <% if (IsRouteExists("attendance/manpower-wise"))
+                                   { %>
+                               <li class="l_sidebar">
+                                   <a href="attendance/manpower-wise" class="">
+                                       <span class="menu-text">Manpower Wise Attendance</span>
+                                   </a>
+                               </li>
+                               <% } %>
+                           </ul>
+                        </li>
+                        <li class="bordered">
+                           <span class="mega-title">Out Duty</span>
+                           <ul>
+                               <% if (IsRouteExists("attendance/out-duty-add"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/out-duty-add" class="">
+                                       <span class="menu-text">Out Duty</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/out-duty-list"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/out-duty-list" class="">
+                                       <span class="menu-text">Out Duty List</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/out-duty-approval"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/out-duty-approval" runat="server" class="">
+                                       <span class="menu-text">Out Duty Approval</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/out-duty-report"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/out-duty-report" class="">
+                                       <span class="menu-text">Out Duty Report</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/absent-notification"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/absent-notification" class="">
+                                       <span class="menu-text">Absent Notification</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/manpower-statement"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/manpower-statement" class="">
+                                       <span class="menu-text">Manpower Statement</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/weekend-setup"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/weekend-setup" class="">
+                                       <span class="menu-text">Weekend Setup</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/general-day-setup"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/general-day-setup" class="">
+                                       <span class="menu-text">General Day Setup</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/weekend-info-report"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/weekend-info-report" class="">
+                                       <span class="menu-text">Weekend Info Report</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                               <% if (IsRouteExists("attendance/attendance-analysis"))
+                                   { %>
+                               <li>
+                                   <a href="attendance/attendance-analysis" class="">
+                                       <span class="menu-text">Analysis Report</span>
+                                   </a>
+                               </li>
+                               <% } %>
+
+                           </ul>
+                        </li>
+
+                         <li class="bordered">
+                             <span class="mega-title">Roster Information</span>
+                             <ul>
+                                 <% if (IsRouteExists("roster/create"))
+                                     { %>
+                                 <li>
+                                     <a class="" href="roster/create" runat="server">Roster Create</a>
+                                 </li>
+                                 <% } %>
+
+                                 <% if (IsRouteExists("roster/extend"))
+                                     { %>
+                                 <li>
+                                     <a class="" href="roster/extend" runat="server">Roster Extend</a>
+                                 </li>
+                                 <% } %>
+
+                                 <% if (IsRouteExists("roster/view-remove"))
+                                     { %>
+                                 <li>
+                                     <a class="" href="roster/view-remove" runat="server">Roster View & Remove</a>
+                                 </li>
+                                 <% } %>
+
+                                 <% if (IsRouteExists("roster/transfer"))
+                                     { %>
+                                 <li>
+                                     <a class="" href="roster/transfer" runat="server">Roster Transfer</a>
+                                 </li>
+                                 <% } %>
+
+                                 <% if (IsRouteExists("roster/missing"))
+                                     { %>
+                                 <li>
+                                     <a class="" href="roster/missing" runat="server">Roster Missing</a>
+                                 </li>
+                                 <% } %>
+
+                                 <% if (IsRouteExists("roster/place-assign"))
+                                     { %>
+                                 <li>
+                                     <a class="" href="roster/place-assign" runat="server">Place Assign</a>
+                                 </li>
+                                 <% } %>
+
+                                 <% if (IsRouteExists("roster/report"))
+                                     { %>
+                                 <li>
+                                     <a class="" href="roster/report" runat="server">Roster Manage Report</a>
+                                 </li>
+                                 <% } %>
+
+                                 <% if (IsRouteExists("roster/report-by-date"))
+                                     { %>
+                                 <li>
+                                     <a class="" href="roster/report-by-date" runat="server">Roster Report By Date Range</a>
+                                 </li>
+                                 <% } %>
+
+                               </ul>
+                          </li>
+                     </ul>
+                  </li>--%>
+
+                            <% if (IsRouteExists("leave-root"))
+                                { %>
+                            <li class="mega-item has-subMenu">
+                                <a href="leave-root" class="">Leave</a>
+                                <ul class="subMenu ">
+                                    <li class="bordered">
+                                        <ul>
+                                            <% if (IsRouteExists("leave-root/leave-configuration"))
+                                                { %>
+                                            <li>
+                                                <a href="leave-root/leave-configuration" runat="server">Configuration</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave-root/holiday-settings"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave-root/holiday-settings" runat="server">Holiday Setup</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave/leave-application"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave/leave-application" runat="server">Application</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave-root/short-leave-application"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave-root/short-leave-application" runat="server" class="">Short Leave</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave-root/leave-approval"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave-root/leave-approval" runat="server">Leave Approval</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave-root/short-leave-approval"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave-root/short-leave-approval" runat="server">Short Lv Approval</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave/leave-list"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave/leave-list" runat="server">All Leave List</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave/leave-balance-report"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave/leave-balance-report" runat="server">Lv Balance</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave/yearly-leave-summary-report"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave/yearly-leave-summary-report" runat="server">Lv Summary Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave/el-processing"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave/el-processing" runat="server">EL Processing</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave/el-report"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave/el-report" runat="server">EL Sheet</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("leave/yearly-leave-summary-report"))
+                                                { %>
+                                            <li class="">
+                                                <a href="leave/yearly-leave-summary-report" runat="server">Lv Status Reports</a>
+                                            </li>
+                                            <% } %>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                            <%} %>
+
+
+                            <%--                   <% if (IsRouteExists("salary"))
+                       { %>--%>
+                            <% if (IsRouteExists("salary") || IsRouteExists("advance") || IsRouteExists("bonus") ||
+      IsRouteExists("vat-tax") || IsRouteExists("provident-found"))
+                                { %>
+
+                            <li class="mega-item has-subMenu">
+                                <a href="#" class="">Payroll</a>
+                                <div class="outbox">
+                                    <ul class="megaMenu-wrapper megaMenu-wide">
+                                        <%if (IsRouteExists("salary"))
+                                            { %>
+                                        <li class="bordered">
+                                            <span class="mega-title">Salary</span>
+                                            <ul>
+                                                <% if (IsRouteExists("salary/salary-entry"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary/salary-entry" runat="server">Salary Entry Panel</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("salary/salary-allowance"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary/salary-allowance" runat="server">Allowance Calculation</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("salary/salary-process"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary/salary-process" runat="server">Salary Processing</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("salary/salary-report"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary/salary-report" runat="server">Salary Sheet</a>
+                                                </li>
+                                                <% } %>
+
+
+                                                <li>
+                                                    <a class="" href="../payroll/salary/IncrementEntitleReport.aspx" runat="server">Increment Entitled Report</a>
+                                                </li>
+
+
+                                                <% if (IsRouteExists("salary/monthly-ot-report"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary/monthly-ot-report" runat="server">O.T Payment Report</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("salary/salary-promotion"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary/salary-promotion" runat="server">Promotion Entry Panel</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("salary-promotion/promotion-report"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary-promotion/promotion-report" runat="server">Promotion Report</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("salary/salary-increment"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary/salary-increment" runat="server">Increment Entry Panel</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("salary-increment/increment-report"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary-increment/increment-report" runat="server">Increment Report</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("salary/earn-leave-payment-processing"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary/earn-leave-payment-processing" runat="server">EL Processing</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("salary/earn-leave-payment-sheet"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="salary/earn-leave-payment-sheet" runat="server">EL Payment Sheet</a>
+                                                </li>
+                                                <% } %>
+                                            </ul>
+                                        </li>
+                                        <%} %>
+                                        <%if (IsRouteExists("advance"))
+                                            { %>
+                                        <li class="bordered">
+                                            <span class="mega-title">Advance</span>
+                                            <ul>
+                                                <% if (IsRouteExists("advance/advance"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="advance/advance" runat="server">Advance Entry Panel</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("advance/adv-monthly-installment"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="advance/adv-monthly-installment" runat="server">Advance Settings</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("advance/advance-report"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="advance/advance-report" runat="server">Advance Reports</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("advance/list"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="advance/list" runat="server">Advance List</a>
+                                                </li>
+                                                <% } %>
+                                            </ul>
+                                        </li>
+                                        <%} %>
+                                        <%if (IsRouteExists("bonus"))
+                                            {%>
+                                        <li class="bordered">
+                                            <span class="mega-title">Bouns</span>
+                                            <ul>
+                                                <% if (IsRouteExists("bonus/bonus-setup"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="bonus/bonus-setup" runat="server">Bonus Setup</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("bonus/bonus-month-setup"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="bonus/bonus-month-setup" runat="server">B.Month Setup</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("bonus/bonus-process"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="bonus/bonus-process" runat="server">B.Processing</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("bonus/bonus-inc-dec"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="bonus/bonus-inc-dec" runat="server">B.Rise & Fall</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("bonus/bonus-report"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="bonus/bonus-report" runat="server">Bonus Sheet</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("bonus/bonus-summary"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="bonus/bonus-summary" runat="server">B.Summary</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("bonus/bonus-miss-report"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="bonus/bonus-miss-report" runat="server">B.Miss Sheet</a>
+                                                </li>
+                                                <% } %>
+                                            </ul>
+                                        </li>
+                                        <%} %>
+                                        <%if (IsRouteExists("vat-tax"))
+                                            {%>
+                                        <li class="bordered">
+                                            <span class="mega-title">Vat and Tax
+                                            </span>
+                                            <ul>
+                                                <% if (IsRouteExists("vat-tax-root/vat-tax-allowance"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="vat-tax-root/vat-tax-allowance" runat="server">Allowance Calculation</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("vat-tax-root/rate"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="vat-tax-root/rate" runat="server">Vat&Tax Rate Settings</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("vat-tax-root/tax-free"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="vat-tax-root/tax-free" runat="server">Tax Free Allowance</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("vat-tax-root/rebatable-rate-set"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="vat-tax-root/rebatable-rate-set" runat="server">Rebatable Rate Settings</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("vat-tax-root/years-setup"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="vat-tax-root/years-setup" runat="server">Tax Years Setup</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("vat-tax-root/investment"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="vat-tax-root/investment" runat="server">Investment</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("vat-tax/process"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="vat-tax/process" runat="server">Tax Processing</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("vat-tax/report"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="vat-tax/report" runat="server">Tax Reports</a>
+                                                </li>
+                                                <% } %>
+                                            </ul>
+                                        </li>
+
+                                        <%} %>
+
+                                        <% if (IsRouteExists("provident-found"))
+                                            { %>
+                                        <li class="bordered">
+                                            <span class="mega-title">Provident Fund(PF)
+                                            </span>
+                                            <ul>
+                                                <% if (IsRouteExists("provident-found/pf-calculation"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="provident-found/pf-calculation" runat="server">PF Setting</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("provident-found/Add"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="provident-found/Add" runat="server">PF Entry Panel</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("provident-found/manually-add"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="provident-found/manually-add" runat="server">Manual Entry</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("provident-found/pf-investment"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="provident-found/pf-investment" runat="server">Investment</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("provident-found/investment-withdraw"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="provident-found/investment-withdraw" runat="server">Investment Withdraw</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("provident-found/pf-expense"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="provident-found/pf-expense" runat="server">PF Expense</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("provident-found/pf-distribution"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="provident-found/pf-distribution" runat="server">Profit Distribution</a>
+                                                </li>
+                                                <% } %>
+
+                                                <% if (IsRouteExists("provident-found/pf-withdraw"))
+                                                    { %>
+                                                <li>
+                                                    <a class="" href="provident-found/pf-withdraw" runat="server">PF Withdraw</a>
+                                                </li>
+                                                <% } %>
+                                            </ul>
+                                        </li>
+                                        <%} %>
+                                    </ul>
+                                </div>
+                            </li>
+                            <%} %>
+
+                            <% if (IsRouteExists("personnel"))
+                                { %>
+                            <li class="mega-item has-subMenu">
+                                <a href="personnel" class="">Personnel</a>
+                                <ul class="subMenu  <%--megaMenu-small--%>">
+                                    <li class="bordered">
+                                        <ul>
+                                            <% if (IsRouteExists("employees/add"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/add" runat="server">Employee Entry Panel</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/list"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/list" runat="server">Employee List</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/allow-to-compliance"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/allow-to-compliance" runat="server">Pending Worker List</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/profile"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/profile" runat="server">Employee Profile Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/info-report"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/info-report" runat="server">Employee info Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/separation/entry"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/separation/entry" runat="server">Separation Entry</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/separation/report"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/separation/report" runat="server">Separation Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/man-power-status"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/man-power-status" runat="server">Man Power Status Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/monthly-man-power-status"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/monthly-man-power-status" runat="server">Man Power Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/contact-list"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/contact-list" runat="server">Contact List Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/id-card"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/id-card" runat="server">ID Card Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("employees/blood-group"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="employees/blood-group" runat="server">Blood Group Report</a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("personnel/letters"))
+                                                { %>
+                                            <li>
+                                                <a class="" href="personnel/letters" runat="server">Letters</a>
+                                            </li>
+                                            <% } %>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <%} %>
+
+                            <% if (IsRouteExists("access-control"))
+                                { %>
+                            <li class="mega-item has-subMenu">
+                                <a href="#" class="">Access Control</a>
+                                <ul class="subMenu">
+                                    <li class="bordered">
+                                        <ul>
+                                            <% if (IsRouteExists("access-control/user/roles"))
+                                                { %>
+                                            <li>
+                                                <a href="/hrms/access-control/user/roles">
+                                                    <span class="menu-text">User Roles</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                            <% if (IsRouteExists("access-control/users"))
+                                                { %>
+                                            <li>
+                                                <a href="/hrms/access-control/users">
+                                                    <span class="menu-text">User</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("access-control/leave-authority"))
+                                                { %>
+                                            <li>
+                                                <a href="/hrms/access-control/leave-authority">
+                                                    <span class="menu-text">Lv Authotiry</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                            <% if (IsRouteExists("access-control/out-duty-authority"))
+                                                { %>
+                                            <li>
+                                                <a href="/hrms/access-control/out-duty-authority">
+                                                    <span class="menu-text">Out duty Authotiry</span>
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <% } %>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ends: navbar-left -->
+            <div class="navbar-right">
+
+                <ul class="navbar-right__menu">
+                    <!-- ends: nav-message -->
+                    <li class="nav-notification">
+                        <div class="dropdown-custom">
+                            <a href="javascript:;" class="nav-item-toggle icon-active">
+                                <img class="svg" src="/hrms/img/svg/alarm.svg" alt="img">
+                            </a>
+                            <div class="dropdown-parent-wrapper">
+                                <div class="dropdown-wrapper">
+                                    <h2 class="dropdown-wrapper__title">Notifications <span class="badge-circle badge-warning ms-1">1</span></h2>
+                                    <ul>
+                                        <li class="nav-notification__single nav-notification__single--unread d-flex flex-wrap">
+                                            <div class="nav-notification__type nav-notification__type--primary">
+                                                <img class="svg" src="/hrms/img/svg/inbox.svg" alt="inbox">
+                                            </div>
+                                            <div class="nav-notification__details">
+                                                <p>
+                                                    <a href="" class="subject stretched-link text-truncate" style="max-width: 180px;">Notification</a> v     
+                                                    <span>Upcoming Features </span>
+                                                </p>
+                                                <p>
+                                                    <span class="time-posted">comming soon</span>
+                                                </p>
+                                            </div>
+                                        </li>
+
+
+
+                                    </ul>
+                                    <a href="" class="dropdown-wrapper__more">See all incoming activity</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- ends: .nav-notification -->
+                    <% if (IsRouteExists("settings"))
+                        { %>
+
+                    <li class="nav-settings">
+                        <div class="dropdown-custom">
+                            <a href="javascript:;" class="nav-item-toggle">
+                                <img src="/hrms/img/setting.png" alt="setting">
+                            </a>
+                            <div class="dropdown-parent-wrapper">
+                                <div class="dropdown-wrapper dropdown-wrapper--large">
+                                    <ul class="list-settings">
+                                        <% if (IsRouteExists("settings/department"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class="IconStyle uil uil-sitemap"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/department" runat="server" class="stretched-link">Department</a>
+                                                </h6>
+                                                <p>Setup Department</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/designation"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" IconStyle uil uil-bag"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/designation" runat="server" class="stretched-link">Designation</a>
+                                                </h6>
+                                                <p>Setup Designation</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/grade"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" gradeIconStyle uil uil-star"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/grade" runat="server" class="stretched-link">Grade</a>
+                                                </h6>
+                                                <p>Setup Salary Grade</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/shift"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" gradeIconStyle fas fa-people-arrows"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/shift" runat="server" class="stretched-link">Shift</a>
+                                                </h6>
+                                                <p>Setup Shift</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/qualification"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" QualiStyle fas fa-graduation-cap"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/qualification" runat="server" class="stretched-link">Qualification</a>
+                                                </h6>
+                                                <p>Setup Qualification</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/religion"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" QualiStyle fas fa-praying-hands"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/religion" runat="server" class="stretched-link">Religion</a>
+                                                </h6>
+                                                <p>Setup Religion</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/district"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class="DistrictStyle fas fa-map-marker-alt"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/district" runat="server" class="stretched-link">District</a>
+                                                </h6>
+                                                <p>Setup District</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/thana"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" DistrictStyle uil uil-university"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/thana" runat="server" class="stretched-link">Thana</a>
+                                                </h6>
+                                                <p>Setup Thana </p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/stamp-deduction"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" IconStyle fas fa-stamp"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/stamp-deduction" runat="server" class="stretched-link">Stamp Deduction</a>
+                                                </h6>
+                                                <p>Setup Stamp Deduction</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/line-group"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" IconStyle uil uil-align-left"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/line-group" runat="server" class="stretched-link">Line/Group</a>
+                                                </h6>
+                                                <p>Setup Line/Group</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/company"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" QualiStyle uil uil-shop"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/company" runat="server" class="stretched-link">Company
+                                                    </a>
+                                                </h6>
+                                                <p>Setup Company</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/others"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class="QualiStyle fas fa-angle-double-right"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/others" runat="server" class="stretched-link">Others
+                                                    </a>
+                                                </h6>
+                                                <p>setup Others</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/floor"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class=" QualiStyle uil uil-layer-group"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/floor" runat="server" class="stretched-link">Floor
+                                                    </a>
+                                                </h6>
+                                                <p>Setup Floor</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                        <% if (IsRouteExists("settings/business"))
+                                            { %>
+                                        <li class="d-flex">
+                                            <div class="me-3"><i class="QualiStyle uil uil-globe"></i></div>
+                                            <div class="flex-grow-1">
+                                                <h6>
+                                                    <a href="settings/business" runat="server" class="stretched-link">Business Type
+                                                    </a>
+                                                </h6>
+                                                <p>Setup Business Type</p>
+                                            </div>
+                                        </li>
+                                        <%} %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <%} %>
+                    <li class="nav-author">
+                        <div class="dropdown-custom">
+                            <a href="javascript:;" class="nav-item-toggle">
+                                <img src="/hrms/user_img_default.jpg" id="UserProfileImageMenu" alt="" class="rounded-circle">
+                                <span class="nav-item__title"><i class="las la-angle-down nav-item__arrow"></i></span>
+                            </a>
+                            <div class="dropdown-parent-wrapper">
+                                <div class="dropdown-wrapper">
+                                    <div class="nav-author__info">
+                                        <div class="author-img">
+                                            <img src="/hrms/user_img_default.jpg" id="userProfileImage" alt="" class="rounded-circle">
+                                        </div>
+                                        <div>
+                                            <h6 runat="server" id="UserName"></h6>
+                                            <%--<span>Frontend Developer</span>--%>
+                                            <span runat="server" id="UserEmail"></span>
+                                        </div>
+                                    </div>
+                                    <div class="nav-author__options">
+                                        <ul>
+                                            <li>
+                                                <a href="/hrms/profile">
+                                                    <i class="uil uil-user"></i>Profile</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="" data-layout="dark">
+                                                    <i class="uil uil-moon"></i>
+                                                    Dark</a>
+                                            </li>
+                                            <li>
+                                                <a href="" data-layout="light">
+                                                    <i class="uil uil-sun"></i>
+                                                    Light</a>
+                                            </li>
+
+                                        </ul>
+                                        <%-- <a href="" class="nav-author__signout">
+                              <i class="uil uil-sign-out-alt"></i> Sign Out</a>--%>
+                                        <asp:LinkButton ClientIDMode="Static" ID="btnLogout" runat="server" CssClass="nav-author__signout" OnClick="btnLogout_Click"><i class="uil uil-sign-out-alt"></i> Sign Out </asp:LinkButton>
+                                    </div>
+                                </div>
+                                <!-- ends: .dropdown-wrapper -->
+                            </div>
+                        </div>
+                    </li>
+                    <!-- ends: .nav-author -->
+                </ul>
+            </div>
+            <!-- ends: .navbar-right -->
+        </nav>
+        <main class="main-content px-2">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+
+        <footer class="footer-wrapperx bg-white p-1">
+            <div class="footer-wrapper__inside">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-copyright d-flex justify-content-center align-items-center p-3">
+                                <p class="mb-0">
+                                    <span>©2024 Developed by</span><a href="https://www.codewareltd.com">Codeware LTD</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+
+    <div id="overlayer">
+        <div class="loader-overlay">
+            <div class="dm-spin-dots spin-lg">
+                <span class="spin-dot badge-dot dot-primary"></span>
+                <span class="spin-dot badge-dot dot-primary"></span>
+                <span class="spin-dot badge-dot dot-primary"></span>
+                <span class="spin-dot badge-dot dot-primary"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay-dark-sidebar"></div>
+    <div class="customizer-overlay"></div>
+    <!-- inject:js-->
+    <!-- Sweet Alert ----->
+
+
+    <%--   <script src="treeview.js"></script>--%>
+    <!-- Include html2pdf.js and its dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+    <script src="/hrms/assets/vendor_assets/js/jquery/jquery-ui.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/bootstrap/popper.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/moment/moment.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/accordion.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/apexcharts.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/autoComplete.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/Chart.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/daterangepicker.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/drawer.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/dynamicBadge.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/dynamicCheckbox.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/footable.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+    <script src="/hrms/assets/vendor_assets/js/fullcalendar@5.2.0.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/google-chart.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/jquery-jvectormap-2.0.5.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/jquery.countdown.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/jquery.filterizr.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/jquery.peity.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/jquery.star-rating-svg.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/leaflet.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/leaflet.markercluster.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/loader.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/message.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/moment.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/muuri.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/notification.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/popover.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/select2.full.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/slick.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/trumbowyg.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/wickedpicker.min.js"></script>
+    <script src="/hrms/assets/vendor_assets/js/google-chart.js"></script>
+    <script src="/hrms/assets/theme_assets/js/apexmain.js"></script>
+    <script src="/hrms/assets/theme_assets/js/charts.js"></script>
+    <script src="/hrms/assets/theme_assets/js/drag-drop.js"></script>
+    <script src="/hrms/assets/theme_assets/js/footable.js"></script>
+    <script src="/hrms/assets/theme_assets/js/full-calendar.js"></script>
+    <script src="/hrms/assets/theme_assets/js/googlemap-init.js"></script>
+    <script src="/hrms/assets/theme_assets/js/icon-loader.js"></script>
+    <script src="/hrms/assets/theme_assets/js/main.js"></script>
+    <script src="/hrms/assets/theme_assets/js/jvectormap-init.js"></script>
+    <script src="/hrms/assets/theme_assets/js/leaflet-init.js"></script>
+
+
+    <script>
+
+        $(document).ready(function () {
+            var userImage = '<%= Session["__UserImageLink__"] %>';
+
+            if (userImage) {
+                $('#UserProfileImageMenu').attr('src', userImage); // Set the src of the image to display it
+                $('#userProfileImage').attr('src', userImage); // Set the src of the image to display it
+            } else {
+                // If there's no user image, you can set a default or empty image
+                $('#UserProfileImageMenu').attr('src', '/hrms/user_img_default.jpg');
+                $('#userProfileImage').attr('src', '/hrms/user_img_default.jpg');
+            }
+
+        });
+    </script>
+
+</body>
+</html>
