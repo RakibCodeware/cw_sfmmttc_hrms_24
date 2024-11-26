@@ -113,7 +113,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Employee Type</td>
+                                        <td>Student Type</td>
                                         <td>&nbsp;:&nbsp;</td>
                                         <td colspan="5">
                                             <asp:RadioButtonList ID="rblEmpType" runat="server" AutoPostBack="true" RepeatDirection="Horizontal">

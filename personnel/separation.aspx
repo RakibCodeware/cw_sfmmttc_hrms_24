@@ -61,7 +61,7 @@
                     <li><a href="#">/</a></li>
                     <li> <a href="<%= Session["__topMenuForPersonnel__"] %>">Personnel</a></li>
                     <li><a href="#">/</a></li>
-                    <li><a href="#" class="ds_negevation_inactive">Employees Seperation</a></li>
+                    <li><a href="#" class="ds_negevation_inactive">Student Seperation</a></li>
                 </ul>
             </div>
 

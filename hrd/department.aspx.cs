@@ -86,6 +86,7 @@ namespace SigmaERP.hrd
         {
             try
             {
+                string date = txtStartDate.Text.ToString();
                
                     if (ViewState["__CardNoType__"].ToString().Equals("True")&&!CodeValidation())
                     {
@@ -97,25 +98,30 @@ namespace SigmaERP.hrd
                     lblMessage.InnerText = "warning->Please Select Status";
                     return;
                 }
-                if (btnSave.Text=="Update")
+                Page.Validate();
+                if (Page.IsValid)
                 {
-                    if (UpdateDepartment() == true)
+                    if (btnSave.Text == "Update")
                     {
-                        loadDepartment();
-                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "UpdateSuccess()", true);
-                        allClear();
+                        if (UpdateDepartment() == true)
+                        {
+                            loadDepartment();
+                            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "UpdateSuccess()", true);
+                            allClear();
+                        }
+                    }
+                    else
+                    {
+
+                        if (SaveDepartment() == true)
+                        {
+                            allClear();
+                            loadDepartment();
+                            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "SaveSuccess()", true);
+                        }
                     }
                 }
-                else
-                {
-                  
-                    if (SaveDepartment() == true)
-                    {
-                        allClear();
-                        loadDepartment();
-                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "SaveSuccess()", true);
-                    }
-                }
+                
             }
             catch
             {
@@ -175,7 +181,7 @@ namespace SigmaERP.hrd
                 {
                     CompanyId = ViewState["__CompanyId__"].ToString();
                 }
-                SqlCommand cmd = new SqlCommand("insert into HRD_Department values('" + classes.commonTask.LoadSL("Select Max(Sl) as SL from HRD_Department", "Department") + "','" + CompanyId + "','" + txtDepartment.Text.Trim() + "',N'" + txtDepartmentBn.Text + "','" + txtDepartmentCode.Text.Trim() + "'," + st.ToString() + ",0,0) ", sqlDB.connection);
+                SqlCommand cmd = new SqlCommand("insert into HRD_Department values('" + classes.commonTask.LoadSL("Select Max(Sl) as SL from HRD_Department", "Department") + "','" + CompanyId + "','" + txtDepartment.Text.Trim() + "',N'" + txtDepartmentBn.Text + "','" + txtDepartmentCode.Text.Trim() + "'," + st.ToString() + ",0,0,'" + txtStartDate.Text.Trim() + "','" + txtendDate.Text + "'," + txtstipend.Text.Trim() +") ", sqlDB.connection);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -202,7 +208,7 @@ namespace SigmaERP.hrd
                     CompanyId = ViewState["__CompanyId__"].ToString();
                 }
                 string getIdentifierValue = ViewState["__getSL__"].ToString();
-                SqlCommand cmd = new SqlCommand("Update HRD_Department set CompanyId='" + CompanyId + "', DptName='" + txtDepartment.Text + "',DptNameBn=N'" + txtDepartmentBn.Text + "',DptCode='" + txtDepartmentCode.Text.Trim() + "',DptStatus=" + st.ToString() + " where SL=" + getIdentifierValue + "", sqlDB.connection);
+                SqlCommand cmd = new SqlCommand("Update HRD_Department set CompanyId='" + CompanyId + "', DptName='" + txtDepartment.Text + "',DptNameBn=N'" + txtDepartmentBn.Text + "',DptCode='" + txtDepartmentCode.Text.Trim() + "',DptStatus=" + st.ToString() + ",CourseStartDate='"+txtStartDate.Text.Trim().ToString()+ "',CourseEndDate='" + txtendDate.Text.Trim().ToString() + "',StipendAmount="+txtstipend.Text.Trim()+" where SL=" + getIdentifierValue + "", sqlDB.connection);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -224,7 +230,9 @@ namespace SigmaERP.hrd
                 //}
                 //else
                 //{
-                sqlcmd = "SELECT SL,CompanyId,DptName, DptNameBn,DptCode, DptStatus,CompanyName,DptId FROM v_HRD_Department where CompanyId='" + CompanyId + "' order by convert(int,DptCode)";
+                sqlcmd = @"SELECT  SL,CompanyId, DptName,DptNameBn,DptCode,DptStatus,CompanyName, DptId,CASE 
+WHEN CourseStartDate = '1900-01-01' THEN '' ELSE ISNULL(CONVERT(varchar(10), CourseStartDate, 105), '') END AS CourseStartDate,CASE WHEN CourseEndDate = '1900-01-01' THEN '' ELSE ISNULL(CONVERT(varchar(10), CourseEndDate, 105), '')  END AS CourseEndDate,StipendAmount
+ FROM  v_HRD_Department where CompanyId='" + CompanyId + "' order by convert(int,DptCode)";
                 
                  dt = new DataTable();
                 sqlDB.fillDataTable(sqlcmd, dt);                
@@ -322,6 +330,29 @@ namespace SigmaERP.hrd
                         dlStatus.SelectedValue = "Active";
                     else
                         dlStatus.SelectedValue = "InActive";
+                    txtStartDate.Text = dt.Rows[0]["CourseStartDate"].ToString();
+                    txtendDate.Text = dt.Rows[0]["CourseEndDate"].ToString();
+                    if (txtStartDate.Text != "")
+                    {
+                        rfvStartDate.Enabled = false;
+                    }
+                    if (txtendDate.Text != "")
+                    {
+                        rfvEndDate.Enabled = false;
+                    }
+                    //DateTime courseStartDate;
+                    //DateTime courseEndDate;
+
+                    //if (DateTime.TryParseExact(dt.Rows[0]["CourseStartDate"].ToString(), "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out courseStartDate))
+                    //{
+                    //    txtStartDate.Text = courseStartDate.ToString("MM-dd-yyyy");
+                    //}
+
+                    //if (DateTime.TryParseExact(dt.Rows[0]["CourseEndDate"].ToString(), "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out courseEndDate))
+                    //{
+                    //    txtendDate.Text = courseEndDate.ToString("MM-dd-yyyy");
+                    //}
+                    txtstipend.Text = dt.Rows[0]["StipendAmount"].ToString();
                 }              
 
             }
@@ -436,6 +467,24 @@ namespace SigmaERP.hrd
             }
            
 
+        }
+
+        protected void cvDateComparison_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            DateTime startDate;
+            DateTime endDate;
+
+            bool isStartDateValid = DateTime.TryParse(txtStartDate.Text, out startDate);
+            bool isEndDateValid = DateTime.TryParse(txtendDate.Text, out endDate);
+
+            if (isStartDateValid && isEndDateValid)
+            {
+                args.IsValid = endDate >= startDate;
+            }
+            else
+            {
+                args.IsValid = false; // Invalid if dates cannot be parsed.
+            }
         }
     }
 }

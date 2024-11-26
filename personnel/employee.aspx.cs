@@ -43,6 +43,8 @@ namespace SigmaERP.personnel
                 lblMessage.InnerText = "";
                 if (!IsPostBack)
                 {
+                    txtJoiningDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
+                    txtExpireDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
                     int[] userPagePermition = AccessControl.hasPermission(pagePermission);
                     if (!userPagePermition.Any())
                         Response.Redirect(Routing.defualtUrl);
@@ -539,12 +541,12 @@ namespace SigmaERP.personnel
                     if (ViewState["__CardNoType__"].ToString().Equals("True"))
                     {
                         cmd.Parameters.AddWithValue("@EmpCardNo", ViewState["__ShortName__"].ToString() + DateTime.Now.Year + ViewState["__DptCode__"].ToString() + txtAlternativeCard.Text);
-                        cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
+                        //cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
                     }
                     else
                     {
                         cmd.Parameters.AddWithValue("@EmpCardNo", ViewState["__ShortName__"].ToString() + DateTime.Now.Year + ViewState["__FlatCode__"].ToString() + txtAlternativeCard.Text);
-                        cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
+                        //cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
                     }
                     
                 }
@@ -552,9 +554,10 @@ namespace SigmaERP.personnel
                 {
                     cmd.Parameters.AddWithValue("@EmpCardNo", txtEmpCardNo.Text.Trim());
                     string cardNo = new String(txtEmpCardNo.Text.Where(Char.IsNumber).ToArray());
-                    int ProximityNo = int.Parse(cardNo.Substring(DateTime.Now.Year.ToString().Length, cardNo.Length - DateTime.Now.Year.ToString().Length));
-                    cmd.Parameters.AddWithValue("@EmpProximityNo", ProximityNo);
+                    //int ProximityNo = int.Parse(cardNo.Substring(DateTime.Now.Year.ToString().Length, cardNo.Length - DateTime.Now.Year.ToString().Length));
+                    //cmd.Parameters.AddWithValue("@EmpProximityNo", ProximityNo);
                 }
+                cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
                 cmd.Parameters.AddWithValue("@PunchType", rblPunchType.SelectedValue);
                 cmd.Parameters.AddWithValue("@RealProximityNo", txtProximityNo.Text.Trim());
                 cmd.Parameters.AddWithValue("@EmpStatus", ddlEmpStatus.SelectedValue);
@@ -982,21 +985,22 @@ namespace SigmaERP.personnel
                     if (ViewState["__CardNoType__"].ToString().Equals("True"))
                     {
                         cmd.Parameters.AddWithValue("@EmpCardNo", ViewState["__ShortName__"].ToString() + DateTime.Now.Year + ViewState["__DptCode__"].ToString() + txtAlternativeCard.Text);
-                        cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
+                        //cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
                     }
                     else
                     {
                         cmd.Parameters.AddWithValue("@EmpCardNo", ViewState["__ShortName__"].ToString() + DateTime.Now.Year + ViewState["__FlatCode__"].ToString() + txtAlternativeCard.Text);
-                        cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
+                        //cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
                     }
                 }
                 else
                 {
                     cmd.Parameters.AddWithValue("@EmpCardNo", txtEmpCardNo.Text.Trim());
                     string cardNo = new String(txtEmpCardNo.Text.Where(Char.IsNumber).ToArray());
-                    int ProximityNo = int.Parse(cardNo.Substring(DateTime.Now.Year.ToString().Length, cardNo.Length - DateTime.Now.Year.ToString().Length));
-                    cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
+                    //int ProximityNo = int.Parse(cardNo.Substring(DateTime.Now.Year.ToString().Length, cardNo.Length - DateTime.Now.Year.ToString().Length));
+                    //cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
                 }
+                cmd.Parameters.AddWithValue("@EmpProximityNo", txtRegistrationId.Text.Trim());
                 cmd.Parameters.AddWithValue("@PunchType", rblPunchType.SelectedValue);
                 cmd.Parameters.AddWithValue("@RealProximityNo", txtProximityNo.Text.Trim());
                 cmd.Parameters.AddWithValue("@EmpStatus", ddlEmpStatus.SelectedValue);
@@ -2181,15 +2185,17 @@ namespace SigmaERP.personnel
                     StartIndex = 8 + StartIndex;
                     sqlDB.fillDataTable("Select SubString(EmpCardNo,8,15) as EmpCardNo From Personnel_EmployeeInfo where SubString(EmpCardNo,8,15)='" + CODE + txtAlternativeCard.Text + "' and EmpId !='" + ddlEmpCardNo.SelectedValue + "'  and CompanyId='" + ddlBranch.SelectedValue + "'", dt);
                 }
+               
+
                 else sqlDB.fillDataTable("Select SubString(EmpCardNo,8,15) as EmpCardNo From Personnel_EmployeeInfo where EmpCardNo='" + txtEmpCardNo.Text + "' and EmpId !='" + ddlEmpCardNo.SelectedValue + "'  and CompanyId='" + ddlBranch.SelectedValue + "'", dt);
-               
-               
+
+                string query = "Select SubString(EmpCardNo,8,15) as EmpCardNo From Personnel_EmployeeInfo where EmpCardNo='" + txtEmpCardNo.Text + "' and EmpId !='" + ddlEmpCardNo.SelectedValue + "'  and CompanyId='" + ddlBranch.SelectedValue + "'";
                 //if (chkAlternativeEmpCard.Checked)
                 //{
                 //    sqlDB.fillDataTable("Select SubString(EmpCardNo,8,15) as EmpCardNo From Personnel_EmployeeInfo where EmpCardNo='" + txtAlternativeCard.Text + "' and EmpId !='" + ddlEmpCardNo.SelectedValue + "' and CompanyId='" + ddlBranch.SelectedValue + "'", dt);
                 //}
                 //else sqlDB.fillDataTable("Select SubString(EmpCardNo,8,15) as EmpCardNo From Personnel_EmployeeInfo where EmpCardNo='" + txtEmpCardNo.Text + "' and EmpId !='" + ddlEmpCardNo.SelectedValue + "'  and CompanyId='" + ddlBranch.SelectedValue + "'", dt);
-             
+
                 if (dt.Rows.Count > 0)
                 {
                     //lblMessage.InnerText = "warning->This Employee Card is used by another person";

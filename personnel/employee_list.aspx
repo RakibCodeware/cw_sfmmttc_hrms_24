@@ -67,7 +67,7 @@
                        <li><a href="#">/</a></li>
                        <li> <a href="<%= Session["__topMenuForPersonnel__"] %>">Personnel</a></li>
                        <li><a href="#">/</a></li>
-                       <li><a href="#" class="ds_negevation_inactive Ptactive">Employees Details</a></li>
+                       <li><a href="#" class="ds_negevation_inactive Ptactive">Student Details</a></li>
                    </ul>
                </div>
           
@@ -100,7 +100,7 @@
                         <ContentTemplate>
                             <div style="overflow: hidden;margin-bottom: 5px; border-bottom: 1px solid #ddd;">
                                 <h3 class="emp_header_left">
-                                <p style="font-size: 20px;text-align: center;font-weight: 500; text-shadow: 5px 5px 5px #000;">Employee List Panel</p>
+                                <p style="font-size: 20px;text-align: center;font-weight: 500; text-shadow: 5px 5px 5px #000;">Student List Panel</p>
                                 <h2 class="emp_header_right">                
                                     <span id="pTotalEmployee" runat="server" class="total_emp">Any Employee Not Founded</span>
                                     <asp:Button runat="server" ID="btnClear" CssClass="css_btn Ptbut" Text="Clear" Width="75px" Height="34px" OnClick="btnClear_Click"   />                       
@@ -112,9 +112,9 @@
                     <table border="0" cellpadding="4" width="99%" cellspacing="0" style="margin:0 0 5px 6px; border-collapse: collapse;">
                         <tr>
                             <td>Com</td>
-                            <td>Depertment</td>
+                            <td>Course name</td>
                             <td>Shift</td>
-                            <td>Line / Grp</td>
+                            <td>Group</td>
                             <td>Card No/ Reg.</td>
                             <td>Year</td>
                             <td>From Date</td>
@@ -187,12 +187,12 @@
                            <asp:BoundField DataField="EmpCardNo" HeaderText="Card No (Reg.)" ItemStyle-HorizontalAlign="Center" />
                                  <asp:BoundField DataField="EmpName" HeaderText="Name" />
                                  <asp:BoundField DataField="EmpJoiningDate" HeaderText="Join Date" ItemStyle-HorizontalAlign="Center" />
-                                 <asp:BoundField DataField="DptName" HeaderText="Department" ItemStyle-HorizontalAlign="Center" />
-                                 <asp:BoundField DataField="DsgName" HeaderText="Designation" ItemStyle-HorizontalAlign="Center" />
+                                 <asp:BoundField DataField="DptName" HeaderText="Course name" ItemStyle-HorizontalAlign="Center" />
+                                <%-- <asp:BoundField DataField="DsgName" HeaderText="Designation" ItemStyle-HorizontalAlign="Center" />--%>
                                  <asp:BoundField DataField="SftName" HeaderText="Shift" ItemStyle-HorizontalAlign="Center" />
                                  <asp:BoundField DataField="EmpType" HeaderText="Type" ItemStyle-HorizontalAlign="Center" />
-                                 <asp:BoundField DataField="EmpDutyType" HeaderText="Duty Type" ItemStyle-HorizontalAlign="Center" />   
-                              <asp:BoundField DataField="WeekendType" HeaderText="Weekend Type" ItemStyle-HorizontalAlign="Center" />
+                               <%--  <asp:BoundField DataField="EmpDutyType" HeaderText="Duty Type" ItemStyle-HorizontalAlign="Center" />   --%>
+                           <%--   <asp:BoundField DataField="WeekendType" HeaderText="Weekend Type" ItemStyle-HorizontalAlign="Center" />--%>
                                 <asp:TemplateField HeaderText="Change"  HeaderStyle-Width="30px" ItemStyle-HorizontalAlign="Center">
                                   <ItemTemplate >
                                       <asp:Button ID="btnEdit" runat="server" CommandName="Edit" Width="55px" Height="30px" Font-Bold="true" ForeColor="green" Text="Edit" CommandArgument='<%#((GridViewRow)Container).RowIndex%>' />

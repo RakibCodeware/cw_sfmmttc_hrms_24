@@ -265,6 +265,15 @@ namespace SigmaERP.personnel {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
+        /// trnickname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trnickname;
+        
+        /// <summary>
         /// txtNickName control.
         /// </summary>
         /// <remarks>
@@ -292,6 +301,15 @@ namespace SigmaERP.personnel {
         protected global::System.Web.UI.WebControls.DropDownList ddlDepartment;
         
         /// <summary>
+        /// trDesingation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trDesingation;
+        
+        /// <summary>
         /// ddlDesingnation control.
         /// </summary>
         /// <remarks>
@@ -299,6 +317,15 @@ namespace SigmaERP.personnel {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlDesingnation;
+        
+        /// <summary>
+        /// trgroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trgroup;
         
         /// <summary>
         /// ddlGrouping control.
@@ -463,6 +490,15 @@ namespace SigmaERP.personnel {
         protected global::System.Web.UI.WebControls.DropDownList ddlType;
         
         /// <summary>
+        /// trDutyType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trDutyType;
+        
+        /// <summary>
         /// rblDutyType control.
         /// </summary>
         /// <remarks>
@@ -470,6 +506,15 @@ namespace SigmaERP.personnel {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblDutyType;
+        
+        /// <summary>
+        /// trWeeknType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trWeeknType;
         
         /// <summary>
         /// rblWeekendType control.
@@ -688,6 +733,15 @@ namespace SigmaERP.personnel {
         protected global::System.Web.UI.WebControls.DropDownList ddlLastEdQualification;
         
         /// <summary>
+        /// trExperience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trExperience;
+        
+        /// <summary>
         /// dsNoOfExperience control.
         /// </summary>
         /// <remarks>
@@ -722,6 +776,15 @@ namespace SigmaERP.personnel {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMobileNo;
+        
+        /// <summary>
+        /// trVisaNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trVisaNo;
         
         /// <summary>
         /// txtEmpVisaNo control.

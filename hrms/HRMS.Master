@@ -176,6 +176,16 @@
                                                 </a>
                                             </li>
                                             <% } %>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/stipend" class="">
+                                                    <span class="menu-text">Student Stipend</span>
+                                                </a>
+                                            </li>
+                                            <li class="l_sidebar">
+                                                <a href="attendance/stipend-sheet" class="">
+                                                    <span class="menu-text">Stipend Sheet</span>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <%} %>
@@ -1036,35 +1046,35 @@
                                             <% if (IsRouteExists("employees/add"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/add" runat="server">Employee Entry Panel</a>
+                                                <a class="" href="employees/add" runat="server">Student Entry Panel</a>
                                             </li>
                                             <% } %>
 
                                             <% if (IsRouteExists("employees/list"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/list" runat="server">Employee List</a>
+                                                <a class="" href="employees/list" runat="server">Student List</a>
                                             </li>
                                             <% } %>
 
                                             <% if (IsRouteExists("employees/allow-to-compliance"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/allow-to-compliance" runat="server">Pending Worker List</a>
+                                                <a class="" href="employees/allow-to-compliance" runat="server">Pending Student List</a>
                                             </li>
                                             <% } %>
 
                                             <% if (IsRouteExists("employees/profile"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/profile" runat="server">Employee Profile Report</a>
+                                                <a class="" href="employees/profile" runat="server">Student Profile Report</a>
                                             </li>
                                             <% } %>
 
                                             <% if (IsRouteExists("employees/info-report"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/info-report" runat="server">Employee info Report</a>
+                                                <a class="" href="employees/info-report" runat="server">Student info Report</a>
                                             </li>
                                             <% } %>
 
@@ -1085,35 +1095,35 @@
                                             <% if (IsRouteExists("employees/man-power-status"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/man-power-status" runat="server">Man Power Status Report</a>
+                                                <a class="" href="employees/man-power-status" runat="server">Student Status Report</a>
                                             </li>
                                             <% } %>
 
                                             <% if (IsRouteExists("employees/monthly-man-power-status"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/monthly-man-power-status" runat="server">Man Power Report</a>
+                                                <a class="" href="employees/monthly-man-power-status" runat="server">Student Report</a>
                                             </li>
                                             <% } %>
 
                                             <% if (IsRouteExists("employees/contact-list"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/contact-list" runat="server">Contact List Report</a>
+                                                <a class="" href="employees/contact-list" runat="server">Student Contact List Report</a>
                                             </li>
                                             <% } %>
 
                                             <% if (IsRouteExists("employees/id-card"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/id-card" runat="server">ID Card Report</a>
+                                                <a class="" href="employees/id-card" runat="server"> ID Card Report</a>
                                             </li>
                                             <% } %>
 
                                             <% if (IsRouteExists("employees/blood-group"))
                                                 { %>
                                             <li>
-                                                <a class="" href="employees/blood-group" runat="server">Blood Group Report</a>
+                                                <a class="" href="employees/blood-group" runat="server"> Blood Group Report</a>
                                             </li>
                                             <% } %>
 
@@ -1235,9 +1245,9 @@
                                             <div class="me-3"><i class="IconStyle uil uil-sitemap"></i></div>
                                             <div class="flex-grow-1">
                                                 <h6>
-                                                    <a href="settings/department" runat="server" class="stretched-link">Department</a>
+                                                    <a href="settings/department" runat="server" class="stretched-link">Course name</a>
                                                 </h6>
-                                                <p>Setup Department</p>
+                                                <p>Setup Course name</p>
                                             </div>
                                         </li>
                                         <%} %>

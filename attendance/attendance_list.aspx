@@ -118,7 +118,7 @@
              <table style="margin: 0 0 5px 6px; border-collapse: collapse;" width="99%">
                      <tr>
                          <td>Company</td>                        
-                         <td>Depertment</td>
+                         <td>Course Name</td>
                           <td>Shift</td>
                          <td>Line / Grp</td>
                          <td>Card No</td>

@@ -32,7 +32,7 @@
                 <div class="col-md-2">
                     <a class="ds_Settings_Basic_Text" href="/hrms/settings/department">
                         <img class="image_width_for_module" src="/images/common/department.ico" /><br />
-                        Department</a>
+                        Course name</a>
 
                 </div>
 

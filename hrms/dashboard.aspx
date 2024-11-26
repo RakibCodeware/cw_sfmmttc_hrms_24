@@ -48,7 +48,7 @@
                             <div class="ap-po-details ap-po-details--luodcy  overview-card-shape radius-xl d-flex justify-content-between">
                                 <div class=" ap-po-details-content d-flex flex-wrap justify-content-between w-100">
                                     <div class="ap-po-details__titlebar">
-                                        <p class="fs-6 fw-bold">Total Employee</p>
+                                        <p class="fs-6 fw-bold">Total Student</p>
                                            <div class="loader-size loaderDaily">
                                         <div class="dm-spin-dots  dot-size dot-sizedot-sizedot-sizedot-size spin-sm">
                                             <span class="spin-dot badge-dot dot-primary"></span>
@@ -291,8 +291,8 @@
                                                 <thead class="sticky-top text-center">
                                                     <tr>
                                                         <th>SL </th>
-                                                        <th>Department </th>
-                                                        <th>Total Employee</th>
+                                                        <th>Course Name </th>
+                                                        <th>Total Student</th>
                                                         <th>Male</th>
                                                         <th>Female</th>
                                                         <th>Present</th>
@@ -336,7 +336,7 @@
                         <!-- Card 1  -->
                         <div class="card">
                             <div class="card-header">
-                              <h6>Current Employee Status</h6>  
+                              <h6>Current Student Status</h6>  
                             </div>
                                   <div class="ap-po-details ap-po-details--3x radius-xl d-flex">
                             <div class="row">
@@ -585,7 +585,7 @@
 
                                     <div class="card position-relative border-0 MaleFemale">
                                         <div class="card-header">
-                                            <h6>Staff Worker Ratio</h6>
+                                            <h6>Student Teacher Ratio</h6>
                                         </div>
                                         <!-- ends: .card-header -->
                                         <div class="card-body cardBodyCenter">
@@ -613,13 +613,13 @@
                                                         <div class="session-single">
                                                             <div class="chart-label">
                                                                 <span class="label-dot staff"></span>
-                                                                Staff
+                                                                Teacher
                                                             </div>
                                                         </div>
                                                         <div class="session-single">
                                                             <div class="chart-label">
                                                                 <span class="label-dot worker"></span>
-                                                                Worker
+                                                                Student
                                                             </div>
                                                         </div>
 

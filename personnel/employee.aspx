@@ -84,7 +84,7 @@
                             <div class="employee_box_left">
                                 <table class="employee_table">
                                     <tr id="trBranch" runat="server">
-                                        <td>Branch <span class="requerd1">*</span>
+                                        <td>TTC <%--<span class="requerd1">*--%></span>
                                         </td>
                                         <td>:
                                         </td>
@@ -94,7 +94,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Emp Type <span class="requerd1">*</span>
+                                        <td>Student Type <%--<span class="requerd1">*--%></span>
                                         </td>
                                         <td>:
                                         </td>
@@ -116,7 +116,7 @@
                                     </tr>
                                     <tr>
 
-                                        <td>Salary Type <span class="requerd1">*</span>
+                                        <td>Stuffing <%--<span class="requerd1">*--%></span>
                                         </td>
                                         <td>:
                                         </td>
@@ -139,8 +139,8 @@
 
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>Nick  Name <span class="requerd1">*</span>
+                                    <tr runat="server" id="trnickname" visible="false">
+                                        <td>Nick  Name <%--<span class="requerd1">*--%></span>
                                         </td>
                                         <td>:
                                         </td>
@@ -150,7 +150,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>নাম <span class="requerd1">*</span></td>
+                                        <td>নাম <%--<%--<span class="requerd1">*--%></span></td>
                                         <td>:
                                         </td>
                                         <td>
@@ -159,7 +159,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Department <span class="requerd1">*</span>
+                                        <td>Course name <span class="requerd1">*</span>
                                         </td>
                                         <td>:
                                         </td>
@@ -169,8 +169,8 @@
                                     </tr>
 
 
-                                    <tr>
-                                        <td>Designation <span class="requerd1">*</span>
+                                    <tr runat="server" id="trDesingation" visible="false">
+                                        <td>Designation <%--<span class="requerd1">*--%></span>
                                         </td> 
                                         <td>:
                                         </td>
@@ -179,8 +179,8 @@
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td>Group <span class="requerd1">*</span>
+                                    <tr runat="server" id="trgroup" visible="false">
+                                        <td>Group <%--<span class="requerd1">*--%></span>
                                         </td>
                                         <td>:
                                         </td>
@@ -189,7 +189,7 @@
                                         </td>
                                     </tr>
                                      <tr>
-                                        <td>Emp Shift <span class="requerd1">*</span>
+                                        <td>Emp Shift <%--<span class="requerd1">*--%></span>
                                         </td>
                                         <td>:
                                         </td>
@@ -199,7 +199,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>EmpCard No<span class="requerd1">*</span>
+                                        <td>EmpCard No<%--<span class="requerd1">*--%></span>
                                         </td>
                                         <td>:
                                         </td>
@@ -222,7 +222,7 @@
                                         </td>
                                     </tr>
                                       <tr>
-                                        <td>Reg.ID <span class="requerd1">*</span>
+                                        <td>Reg.ID <%--<span class="requerd1">*--%></span>
                                         </td>
                                         <td>:
                                         </td>
@@ -264,7 +264,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Emp Status
+                                        <td>Student Status
                                         </td>
                                         <td>:
                                         </td>
@@ -288,7 +288,7 @@
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr runat="server" id="trDutyType" visible="false">
                                         <td>Duty Type
                                         </td>
                                         <td>:
@@ -299,7 +299,8 @@
                                                 <asp:ListItem Value="Roster" Text="Roster"></asp:ListItem>                                               
                                             </asp:RadioButtonList>
                                         </td>
-                                    </tr><tr>
+                                    </tr>
+                                    <tr runat="server" id="trWeeknType" visible="false">
                                         <td>Weekend Type
                                         </td>
                                         <td>:
@@ -357,7 +358,7 @@
                             <ContentTemplate>
                                 <table class="employee_table" style="height: 578px;">
                                      <tr>
-                                        <td>Joining Date <span class="requerd1">*</span>
+                                        <td>Course Start Date<%--<span class="requerd1">*--%></span>
                                         </td>
                                         <td>:
                                         </td>
@@ -368,7 +369,7 @@
                                         </td>
                                     </tr>
                                      <tr id="trtxtExpireDate" runat="server">
-                                        <td>Expire Date
+                                        <td> Course Complete Date
                                         </td>
                                         <td>:
                                         </td>
@@ -378,7 +379,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width:175px;">Father's/ Husband's Name
+                                        <td style="width:175px;">Father's/ Husband's Name<span class="requerd1">*</span>
                                         </td>
                                         <td>:
                                         </td>
@@ -478,9 +479,7 @@
                                         </td>
                                         <td>
 
-                                            <asp:DropDownList ID="dsSex" runat="server" ClientIDMode="Static" CssClass="form-control select_width">
-                                                <asp:ListItem>Male</asp:ListItem>
-                                                <asp:ListItem>Female</asp:ListItem>
+                                            <asp:DropDownList ID="dsSex" runat="server" ClientIDMode="Static" CssClass="form-control select_width">                 <asp:ListItem>Female</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
@@ -506,7 +505,7 @@
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr runat="server" id="trExperience" visible="false">
                                         <td>Total No of Experience
                                         </td>
                                         <td>:
@@ -545,7 +544,7 @@
                                             <asp:TextBox ID="txtMobileNo" ClientIDMode="Static" runat="server" CssClass="form-control text_box_width"></asp:TextBox>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr id="trVisaNo" runat="server" visible="false">
                                           <td>
                                         EmployeeVisa No
                                         </td>
@@ -809,93 +808,93 @@
         function InputValidation() {
             try {                
                 if ($('#txtName').val().trim().length==0) {
-                    showMessage("warning->Please Type Employee Name ");
+                    showMessage("warning->Please Type Student  Name ");
                     $('#txtName').focus();
                     return false;
                 }
-                if ($('#txtNickName').val().trim().length == 0) {
-                    showMessage("warning->Please Type Nick Name ");
-                    $('#txtNickName').focus();
-                    return false;
-                }
+           
                if ($('#ddlDepartment option:selected').text().length == 0) {
-                    showMessage("warning->Please Select Department ");
+                    showMessage("warning->Please Select Course ");
                     $('#ddlDepartment').focus();
                     return false;
                }
-              
+               if ($('#dsFatherName').val().trim().length == 0) {
+                    showMessage("warning->Please Type Your Fathername ");
+                    $('#dsFatherName').focus();
+                    return false;
+               }
                
-                if ($('#ddlDesingnation option:selected').text().length == 0) {
+                //if ($('#ddlDesingnation option:selected').text().length == 0) {
                     
-                    showMessage("warning->Please Select Desingnation ");
-                    $('#ddlDesingnation').focus();
-                    return false;
-                }
-                if ($('#ddlGrouping option:selected').text().length == 0) {                   
-                    showMessage("warning->Please Select Line/Group ");
-                    $('#ddlGrouping').focus();
-                    return false;
-                }
-                 if ($('#ddlShift option:selected').text().length == 0) {
+                //    showMessage("warning->Please Select Desingnation ");
+                //    $('#ddlDesingnation').focus();
+                //    return false;
+                //}
+                //if ($('#ddlGrouping option:selected').text().length == 0) {                   
+                //    showMessage("warning->Please Select Line/Group ");
+                //    $('#ddlGrouping').focus();
+                //    return false;
+                //}
+                // if ($('#ddlShift option:selected').text().length == 0) {
 
-                    showMessage("warning->Please Select Shift ");
-                    $('#ddlShift').focus();
-                    return false;
-                } 
-                if ($('#chkAlternativeEmpCard').attr('checked')) {
-                    var value = $('#hdfCardnoDigitsSet').val();
+                //    showMessage("warning->Please Select Shift ");
+                //    $('#ddlShift').focus();
+                //    return false;
+                //} 
+                //if ($('#chkAlternativeEmpCard').attr('checked')) {
+                //    var value = $('#hdfCardnoDigitsSet').val();
                   
-                    if ($('#txtAlternativeCard').val().trim().length < value) {
-                        showMessage("warning->Please Type Alternative Card No (Minimum" + value + " Digits) ");
-                        $('#txtAlternativeCard').focus();
-                        return false;
-                    }
-                }
+                //    if ($('#txtAlternativeCard').val().trim().length < value) {
+                //        showMessage("warning->Please Type Alternative Card No (Minimum" + value + " Digits) ");
+                //        $('#txtAlternativeCard').focus();
+                //        return false;
+                //    }
+                //}
 
-                if ($('#txtRegistrationId').val().trim().length < 4) {
-                    showMessage("warning->Please Type Valid Registration ID ! ");
-                    $('#txtRegistrationId').focus();
-                    return false;
-                }
-                //alert($('#rblPunchType input:checked').val());
-                if ($('#ContentPlaceHolder1_MainContent_rblPunchType input:checked').val() == '1' && $('#txtProximityNo').val().trim().length != 10) {
-                    showMessage("warning->Please Type Proximity No Must be 10 Digits ");
-                    $('#txtProximityNo').focus();
-                    return false;
-                }
+                //if ($('#txtRegistrationId').val().trim().length < 4) {
+                //    showMessage("warning->Please Type Valid Registration ID ! ");
+                //    $('#txtRegistrationId').focus();
+                //    return false;
+                //}
+                ////alert($('#rblPunchType input:checked').val());
+                //if ($('#ContentPlaceHolder1_MainContent_rblPunchType input:checked').val() == '1' && $('#txtProximityNo').val().trim().length != 10) {
+                //    showMessage("warning->Please Type Proximity No Must be 10 Digits ");
+                //    $('#txtProximityNo').focus();
+                //    return false;
+                //}
 
-                if ($('#ContentPlaceHolder1_MainContent_ckbProximityChange').attr('checked')) {
+                //if ($('#ContentPlaceHolder1_MainContent_ckbProximityChange').attr('checked')) {
                    
-                    if ($('#txtProximityChangeDate').val().trim().length < 8) {
-                        showMessage("warning->Please Type Valid Proximity Change Date ! ");
-                        $('#txtProximityChangeDate').focus();
-                        return false;
-                    }
-                }
+                //    if ($('#txtProximityChangeDate').val().trim().length < 8) {
+                //        showMessage("warning->Please Type Valid Proximity Change Date ! ");
+                //        $('#txtProximityChangeDate').focus();
+                //        return false;
+                //    }
+                //}
                 //if ($('#ContentPlaceHolder1_MainContent_txtEmpCardNo').val().trim().length < 8) {
                 //    showMessage("warning->Employee Card Number Must be 8 Number ");
                 //    $('#ContentPlaceHolder1_MainContent_txtEmpCardNo').focus();
                 //    return false;
                 //}
                
-                if ($('#ddlEmpStatus option:selected').text().length == 0) {
+                //if ($('#ddlEmpStatus option:selected').text().length == 0) {
 
-                    showMessage("warning->Please Select Employee Status ");
-                    $('#ddlEmpStatus').focus();
-                    return false;
-                }
+                //    showMessage("warning->Please Select Employee Status ");
+                //    $('#ddlEmpStatus').focus();
+                //    return false;
+                //}
                     
                
-                if ($('#txtJoiningDate').val().trim().length <8) {
-                    showMessage("warning->Please Select Joining Date");
-                    $('#txtJoiningDate').focus();
-                    return false;
-                }
-                if ($('#txtExpireDate').val().trim().length < 8) {
-                    showMessage("warning->Please Select Expire Date");
-                    $('#txtExpireDate').focus();
-                    return false;
-                }
+                //if ($('#txtJoiningDate').val().trim().length <8) {
+                //    showMessage("warning->Please Select Joining Date");
+                //    $('#txtJoiningDate').focus();
+                //    return false;
+                //}
+                //if ($('#txtExpireDate').val().trim().length < 8) {
+                //    showMessage("warning->Please Select Expire Date");
+                //    $('#txtExpireDate').focus();
+                //    return false;
+                //}
 
                            
                

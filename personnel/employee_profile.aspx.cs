@@ -15,7 +15,7 @@ namespace SigmaERP.personnel
     //view=285
     public partial class employee_profile : System.Web.UI.Page
     {
-        int[] pagePermission = { 286 };
+        int[] pagePermission = { 285 };
         DataTable dt;
         string CompanyID = "";
         protected void Page_Load(object sender, EventArgs e)
@@ -110,12 +110,12 @@ namespace SigmaERP.personnel
 
         protected void btnPrintpreview_Click(object sender, EventArgs e)
         {
-            string condition = AccessControl.getDataAccessCondition(ViewState["__CompanyId__"].ToString(),"All");
+            string condition = AccessControl.getDataAccessCondition(ViewState["__CompanyId__"].ToString(),"0");
             if (rdball.Checked == true)
             {
               
                     sqlDB.fillDataTable("Select Max(SN) as SN,EmpId From  v_EmployeeProfile where  EmpStatus in ('1','8') and IsActive=1 and CompanyId='"+ddlBranch.SelectedValue+"' Group by EmpId", dt=new DataTable());
-              
+                string query = "Select Max(SN) as SN,EmpId From  v_EmployeeProfile where  EmpStatus in ('1','8') and IsActive=1 and CompanyId='" + ddlBranch.SelectedValue + "' Group by EmpId";
                 string setSn = "", setEmpId = "";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -146,7 +146,7 @@ namespace SigmaERP.personnel
 
                 string kk= "Select  EmpId, CompanyId,FatherName,MotherName,EmpCompanyName,Address,Telephone,substring(EmpCardNo,8,15) as EmpCardNo,EmpName,DsgName,DptName,Format(EmpJoiningDate,'dd-MM-yyyy') as EmpJoiningDate,BasicSalary,Format(DateOfBirth,'dd-MM-yyyy') as DateOfBirth,Age,Sex,RName,NationIDCardNo,EmpAccountNo,SalaryCount,GrdName,Type,WagesType,BankName,EmpType,SftName,PreCity,PrePostBox,PerCity,MobileNo,Email,ContactName,EmpRelation,JobDescription,Gender,FamilyAge,BloodGroup,EmpPicture,Nationality,MaritialStatus,PresentAd,PermanentAd,MobileNo,EmpPresentSalary  From v_EmployeeProfile where SN " + setSn + " "+ condition + " order by DptCode,CustomOrdering";
 
-                sqlDB.fillDataTable("Select  EmpId, CompanyId,FatherName,MotherName,EmpCompanyName,Address,Telephone,substring(EmpCardNo,8,15) as EmpCardNo,EmpName,DsgName,DptName,Format(EmpJoiningDate,'dd-MM-yyyy') as EmpJoiningDate,BasicSalary,Format(DateOfBirth,'dd-MM-yyyy') as DateOfBirth,Age,Sex,RName,NationIDCardNo,EmpAccountNo,SalaryCount,GrdName,Type,WagesType,BankName,EmpType,SftName,PreCity,PrePostBox,PerCity,MobileNo,Email,ContactName,EmpRelation,JobDescription,Gender,FamilyAge,BloodGroup,EmpPicture,Nationality,MaritialStatus,PresentAd,PermanentAd,MobileNo,EmpPresentSalary  From v_EmployeeProfile where SN " + setSn + " " + condition + "  order by DptCode,CustomOrdering", dt);
+                sqlDB.fillDataTable("Select  EmpId, CompanyId,FatherName,MotherName,EmpCompanyName,Address,Telephone,substring(EmpCardNo,8,15) as EmpCardNo,EmpName,DsgName,DptName,Format(EmpJoiningDate,'dd-MM-yyyy') as EmpJoiningDate,BasicSalary,Format(DateOfBirth,'dd-MM-yyyy') as DateOfBirth,Age,Sex,RName,NationIDCardNo,EmpAccountNo,SalaryCount,GrdName,Type,WagesType,BankName,EmpType,SftName,PreCity,PrePostBox,PerCity,MobileNo,Email,ContactName,EmpRelation,JobDescription,Gender,FamilyAge,BloodGroup,EmpPicture,Nationality,MaritialStatus,PresentAd,PermanentAd,MobileNo,EmpPresentSalary  From v_EmployeeProfile where SN " + setSn + " and " + condition + "  order by DptCode,CustomOrdering", dt);
                 Session["__EmployeeProfile__"] = dt;
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "call me", "goToNewTabandWindow('/All Report/Report.aspx?for=EmployeeProfile-" + rblReportStructure.SelectedValue + "');", true);  //Open New Tab for Sever side code
             }

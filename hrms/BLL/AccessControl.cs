@@ -93,7 +93,7 @@ namespace SigmaERP.hrms.BLL
         {
 
 
-            string condition = "CompanyId='" + companyId + "'";
+            string condition = " CompanyId='" + companyId + "'";
             //for all
             if (HttpContext.Current.Session["__dataAceesLevel__"].ToString() == "3")
             {

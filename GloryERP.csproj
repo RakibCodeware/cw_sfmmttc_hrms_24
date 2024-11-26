@@ -1096,6 +1096,8 @@
     <Content Include="attendance\out_duty_list.aspx" />
     <Content Include="attendance\out_time_missiong.aspx" />
     <Content Include="attendance\overtime_report.aspx" />
+    <Content Include="attendance\Stipend_process.aspx" />
+    <Content Include="attendance\Stipend_Report.aspx" />
     <Content Include="attendance\test.aspx" />
     <Content Include="attendance\todays_attStatus_report.aspx" />
     <Content Include="attendance\weekend-set-emp-wise.aspx" />
@@ -3407,6 +3409,20 @@
     </Compile>
     <Compile Include="attendance\overtime_report.aspx.designer.cs">
       <DependentUpon>overtime_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="attendance\Stipend_process.aspx.cs">
+      <DependentUpon>Stipend_process.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="attendance\Stipend_process.aspx.designer.cs">
+      <DependentUpon>Stipend_process.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="attendance\Stipend_Report.aspx.cs">
+      <DependentUpon>Stipend_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="attendance\Stipend_Report.aspx.designer.cs">
+      <DependentUpon>Stipend_Report.aspx</DependentUpon>
     </Compile>
     <Compile Include="attendance\test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>

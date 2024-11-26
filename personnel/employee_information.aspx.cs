@@ -26,7 +26,7 @@ namespace SigmaERP.personnel
 
                 sqlDB.connectionString = Glory.getConnectionString();
                 sqlDB.connectDB();
-                int[] pagePermission = { 286 };
+                int[] pagePermission = { 274 };
                 lblMessage.InnerText = "";
                 if (!IsPostBack)
                 {

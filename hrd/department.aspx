@@ -111,6 +111,37 @@
                                 TargetControlID="txtDepartmentCode" ValidChars=""></asp:FilteredTextBoxExtender>
                             </td>
                         </tr>
+
+                        <tr runat="server" id="trCourseStartdate">
+                            <td>Course Start Date <span class="requerd1">*</span>
+                            </td>
+                            <td>:</td>
+                            <td>
+                                <asp:TextBox ID="txtStartDate" ClientIDMode="Static" runat="server" type="date" CssClass="form-control text_box_width"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvStartDate" runat="server" ControlToValidate="txtStartDate" ErrorMessage="Start Date is required." ForeColor="Red" Display="Dynamic" EnableClientScript="false"/>
+                            </td>
+                        </tr>
+
+                        <tr runat="server" id="tr2">
+                            <td>Course End Date <span class="requerd1">*</span>
+                            </td>
+                            <td>:</td>
+                            <td>
+                                <asp:TextBox ID="txtendDate" ClientIDMode="Static" runat="server" type="date" CssClass="form-control text_box_width"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvEndDate" runat="server" ControlToValidate="txtendDate" ErrorMessage="End Date is required." ForeColor="Red" Display="Dynamic" EnableClientScript="false" />
+                                <asp:CustomValidator ID="cvDateComparison" runat="server" ControlToValidate="txtendDate"
+                                    ErrorMessage="End Date must be after Start Date." ForeColor="Red" Display="Dynamic"
+                                   OnServerValidate="cvDateComparison_ServerValidate" />
+                            </td>
+                        </tr>
+                         <tr runat="server" id="tr1">
+                            <td>Stipend Amount <span class="requerd1">*</span>
+                            </td>
+                            <td>:</td>
+                               <td>
+                                  <asp:TextBox ID="txtstipend" ClientIDMode="Static" runat="server"  CssClass="form-control text_box_width"></asp:TextBox>
+                               </td>
+                          </tr>
                         <tr>
                             <td>
                                 Status <span class="requerd1">*</span> 
@@ -156,16 +187,30 @@
 
 <ItemStyle HorizontalAlign="Left" Height="28px" ></ItemStyle>
                              </asp:BoundField>
-                            <asp:BoundField DataField="DptName" HeaderText="Department" Visible="true"  ItemStyle-Height="28px" ItemStyle-HorizontalAlign="center"   >
+                            <asp:BoundField DataField="DptName" HeaderText="Course Name" Visible="true"  ItemStyle-Height="28px" ItemStyle-HorizontalAlign="center"   >
 <ItemStyle Height="28px" ></ItemStyle>
                              </asp:BoundField>
                             <asp:BoundField DataField="DptNameBn" HeaderText="বিভাগ" Visible="true"  ItemStyle-Height="28px" ItemStyle-HorizontalAlign="center" ItemStyle-CssClass="fontF"  >
 <ItemStyle Height="28px" ></ItemStyle>
                              </asp:BoundField>  
                               <asp:BoundField DataField="DptCode" HeaderText="Code" Visible="true"  ItemStyle-Height="28px" ItemStyle-HorizontalAlign="center"  >
+
+   <ItemStyle Height="28px" ></ItemStyle>
+                             </asp:BoundField>  
+                              <asp:BoundField DataField="CourseStartDate" HeaderText="Course Start Date" Visible="true"  ItemStyle-Height="28px" ItemStyle-HorizontalAlign="center"  >
+
+<ItemStyle Height="28px" ></ItemStyle>
+                             </asp:BoundField>  
+                              <asp:BoundField DataField="CourseEndDate" HeaderText="Course End Date" Visible="true"  ItemStyle-Height="28px" ItemStyle-HorizontalAlign="center"  >
+
+
+<ItemStyle Height="28px" ></ItemStyle>
+                             </asp:BoundField>  
+                              <asp:BoundField DataField="StipendAmount" HeaderText="Stipend Amount" Visible="true"  ItemStyle-Height="28px" ItemStyle-HorizontalAlign="center"  >
+
 <ItemStyle Height="28px" ></ItemStyle>
                              </asp:BoundField>                   
-                             <asp:BoundField DataField="DptStatus" HeaderText="Dpt Status" Visible="true"  ItemStyle-Height="28px" >                         
+                             <asp:BoundField DataField="DptStatus" HeaderText="Status" Visible="true"  ItemStyle-Height="28px" >                         
 <ItemStyle Height="28px" ></ItemStyle>
                              </asp:BoundField>
                             <asp:TemplateField HeaderText="Edit">
@@ -195,10 +240,15 @@
          //$('#btnNew').click(function () {
          //    clear();
          //});
+        
          function validateInputs() {
              if (validateText('txtDepartment', 1, 60, 'Enter Department Name') == false) return false;
              if (validateText('txtDepartmentCode', 1, 2, 'Enter Valid Department Code') == false) return false;
-             if (validateText('txtDepartmentCode', 2, 2, 'Enter Department Code (Must be 2 Character)') == false) return false;
+             if (validateText('txtDepartmentCode', 2, 2, 'Enter Department Code (Must be 2 Character)') == false) return false;  
+             if (validateText('txtStartDate', 10, 10, 'Enter Course StartDate') == false) return false;  
+             if (validateText('txtendDate', 10, 10, 'Enter Course End Date') == false) return false;  
+             if (validateText('txtstipend', 1, 10, 'Enter Stipend Amount') == false) return false;  
+             
              return true;
          }
 
@@ -283,5 +333,5 @@
              $('#btnDelete').attr('disabled', 'disabled');
              //$('#dlDivision option:selected').text('---Select---');
          }
-    </script>
+     </script>
 </asp:Content>

@@ -19,7 +19,7 @@
                        <li><a href="#">/</a></li>
                         <li> <a href="<%= Session["__topMenuForPersonnel__"] %>">Personnel</a></li>
                        <li><a href="#">/</a></li>
-                       <li><a href="#" class="ds_negevation_inactive Ptactive">Employees Profile</a></li>
+                       <li><a href="#" class="ds_negevation_inactive Ptactive">Student Profile</a></li>
                    </ul>               
              </div>
           

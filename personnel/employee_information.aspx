@@ -30,7 +30,7 @@
                        <li><a href="#">/</a></li>
                        <li> <a href="<%= Session["__topMenuForPersonnel__"] %>">Personnel</a></li>
                        <li><a href="#">/</a></li>
-                       <li><a href="#" class="ds_negevation_inactive Ptactive">Employees List</a></li>
+                       <li><a href="#" class="ds_negevation_inactive Ptactive">Student List</a></li>
                    </ul>
                </div>
           
@@ -74,7 +74,7 @@
                         </tr>
                              <tr >
                                 <td>
-                                Department
+                                Course name
                             </td>
                             <td>
                                 :

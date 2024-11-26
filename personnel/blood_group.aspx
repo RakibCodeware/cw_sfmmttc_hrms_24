@@ -16,7 +16,7 @@
                    <ul>
                        <li><a href="/default.aspx">Dashboard</a></li>
                        <li><a href="#">/</a></li>
-                       <li> <a href="<%= Session["__topMenuForPersonnel__"] %>">Employee Information</a></li>
+                       <li> <a href="<%= Session["__topMenuForPersonnel__"] %>">Student Information</a></li>
                        <li><a href="#">/</a></li>
                        <li><a href="#" class="ds_negevation_inactive">Blood Group Report</a></li>
                    </ul>               

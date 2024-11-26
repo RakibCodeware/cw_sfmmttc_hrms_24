@@ -32,7 +32,7 @@ namespace SigmaERP.classes
         {
             try
             {
-                sqlCmd = "SELECT SL,CompanyId,DptName, DptNameBn,DptCode, DptStatus,DptId FROM HRD_Department where SL=" + SL;
+                sqlCmd = "SELECT SL,CompanyId,DptName, DptNameBn,DptCode, DptStatus,DptId,convert(varchar(10),CourseStartDate,120) as CourseStartDate,convert(varchar(10),CourseEndDate,120) as CourseEndDate,isnull(StipendAmount,0) as StipendAmount FROM HRD_Department where SL=" + SL;
                 dt = new DataTable();
                 sqlDB.fillDataTable(sqlCmd, dt);
                 return dt;
@@ -418,6 +418,22 @@ namespace SigmaERP.classes
                 da.Fill(dt = new DataTable());
                 dl.DataValueField = "DptId";
                 dl.DataTextField = "DptName";
+                dl.DataSource = dt;
+                dl.DataBind();
+                dl.Items.Insert(0, new ListItem("", "0"));
+            }
+            catch { }
+        }
+        public static void loadCourseListByCompany(DropDownList dl, string CompanyId)
+        {
+            try
+            {
+                string condtion = AccessControl.loadDepartmetCondition(CompanyId);
+                da = new SqlDataAdapter(@"SELECT DptId,  DptName + 
+       ISNULL(' (' + CONVERT(VARCHAR(10), CourseStartDate, 120) + ' to ' + CONVERT(VARCHAR(10), CourseEndDate, 120) + ')', '') AS CourseName FROM HRD_Department where " + condtion + "", sqlDB.connection);
+                da.Fill(dt = new DataTable());
+                dl.DataValueField = "DptId";
+                dl.DataTextField = "CourseName";
                 dl.DataSource = dt;
                 dl.DataBind();
                 dl.Items.Insert(0, new ListItem("", "0"));

@@ -354,7 +354,7 @@ namespace SigmaERP.classes
                                         string[] rosterInfo = _attCommon.GetRosterInfo(SelectedDate.ToString("yyyy-MM-dd"), _attRecord.EmpId, dtEmpInfo.Rows[i]["EmpDutyType"].ToString(), dtEmpInfo.Rows[i]["SftID"].ToString(), dtEmpInfo.Rows[i]["EmpTypeId"].ToString());
                                         if (rosterInfo == null || rosterInfo[0] == "0")
                                         {
-                                            _attCommon.NotCountableAttendanceLog(_attRecord.EmpId, "Roster                                                      Missing", SelectedDate.ToString("yyyy-MM-dd"));
+                                            _attCommon.NotCountableAttendanceLog(_attRecord.EmpId, "Roster Missing", SelectedDate.ToString("yyyy-MM-dd"));
                                             continue;
                                         }
                                         _attRecord.SftId = rosterInfo[0];

@@ -64,7 +64,7 @@
                             </td>                         
                         </tr>
                         <tr>
-                            <td>Employee Type
+                            <td>Student Type
                             </td>
                             <td>:</td>
                             <td>

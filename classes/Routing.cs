@@ -40,7 +40,16 @@ namespace SigmaERP.classes
         public static string profileUrl = rootURL + "profile";
         private static string profilePhyLocation = "~/hrms/userProfile.aspx";
 
+        private static string stipendRoutName = "Stipend";
+        private static string stipendUrl = rootURL+"attendance/stipend";
+        private static string stipendPhyLocation = "~/attendance/Stipend_process.aspx";
+
+        private static string stipendSheetRoutName = "stipend-sheet";
+        private static string stipendSheetUrl = rootURL + "attendance/stipend-sheet";
+        private static string stipendSheetPhyLocation = "~/attendance/Stipend_Report.aspx";
+
         public static string defualtUrl = "~/" + dashboardUrl;
+   
         public static void RegisterInitialRoutes(RouteCollection routes)
         {
             routes.Clear();
@@ -48,6 +57,9 @@ namespace SigmaERP.classes
             routes.MapPageRoute(dashboardRoutName, dashboardUrl, dashboardPhyLocation);
             routes.MapPageRoute(appSettingsName, appSettingsUrl, appSettingsPhyLocation);
             routes.MapPageRoute(profileRoutName, profileUrl, profilePhyLocation);
+
+            routes.MapPageRoute(stipendRoutName,stipendUrl,stipendPhyLocation);
+            routes.MapPageRoute(stipendSheetRoutName, stipendSheetUrl, stipendSheetPhyLocation);
             //routes.MapPageRoute(userName, userUrl, userPhyLocation);
         }
 
