@@ -14,6 +14,7 @@ namespace SigmaERP.attendance
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblMessage.InnerText = "";
             if (!IsPostBack)
             {
                 classes.commonTask.LoadBranch(ddlCompany);
@@ -36,7 +37,7 @@ namespace SigmaERP.attendance
             }
             else
             {
-                lblMessage.InnerText = "Data not Found";
+                lblMessage.InnerText = "warning->Data Not Found";
             }
          
         }

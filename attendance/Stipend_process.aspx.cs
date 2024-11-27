@@ -29,15 +29,15 @@ namespace SigmaERP.attendance
                 bool isSuccess = generateStipend(ddlCourseList.SelectedValue);
                 if (isSuccess)
                 {
-                    lblMessage.InnerText = "Stipend generated Successfull";
+                    lblMessage.InnerText = "success->Stipend generated Successfull";
                 }
                 else
                 {
-                    lblMessage.InnerText = "Stipend generated Failed";
+                    lblMessage.InnerText = "warning->Stipend generated Failed.";
                 }
             }
             else
-                lblMessage.InnerText = "Please select Course";
+                lblMessage.InnerText = "warning->Please Select Course Name.";
 
 
         }
@@ -58,7 +58,7 @@ namespace SigmaERP.attendance
                 }
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return false;
@@ -88,6 +88,7 @@ namespace SigmaERP.attendance
                     string insertQuery = "Insert into StudentMonthlyStipend (StudentId,CourseID,StartDate,EndDate,ActiveDays,WHDays,PresentDays,PresentRatio,Amount) values('" + empId + "'," + dptId + ",'" + fromDate + "','" + toDate + "'," + activeDays + "," + wh + "," + presntDays + ",'" + presntRation + "'," + StipndAmount + ")";
                     CRUD.ExecuteReturnID(insertQuery);
                 }
+                
            
             }
             catch (Exception ex)

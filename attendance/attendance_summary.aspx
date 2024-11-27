@@ -32,6 +32,7 @@
             <p class="message" id="lblMessage" clientidmode="Static" runat="server"></p>
         </ContentTemplate>
     </asp:UpdatePanel>
+
      <div class="row">
         <div class="col-md-12">
             <div class="ds_nagevation_bar">
@@ -241,6 +242,7 @@
                        </div>
                         </ContentTemplate>
                 </asp:UpdatePanel>
+
                 <div class="bonus_generation" style="width:61%; margin:0px auto;">
           <asp:UpdatePanel ID="up2" runat="server" UpdateMode="Conditional" >
               <Triggers>

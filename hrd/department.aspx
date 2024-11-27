@@ -56,7 +56,7 @@
     <asp:HiddenField ID="updelete" runat="server" ClientIDMode="Static" />
     <div class="main_box RBox">
     	<div class="main_box_header RBoxheader">
-            <h2>Department Entry Panel</h2>
+            <h2>Course Entry Panel</h2>
         </div>
     	<div class="main_box_body Rbody">
         	<div class="main_box_content">

@@ -50,7 +50,17 @@
         <asp:UpdatePanel ID="uplMessage" runat="server" >
     <ContentTemplate><p class="message"  id="lblMessage" clientidmode="Static" runat="server"></p></ContentTemplate>
 </asp:UpdatePanel>
-    <div class="card-center">
+
+
+        <asp:UpdatePanel ID="up1" runat="server" UpdateMode="Conditional">
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="btnProcess"/>
+                    
+                      
+                       
+                    </Triggers>
+                    <ContentTemplate>
+                         <div class="card-center">
         <div class="rowx">
         <div class="col-4">
                <asp:Label runat="server" ID="lblCompanyname" CssClass="lebel">Company Name</asp:Label>
@@ -72,6 +82,9 @@
         <asp:Button  runat="server" ID="btnProcess" CssClass="btn btn-success" Text="Process" OnClick="btnProcess_Click"/>
     </div>
     </div>
+                    </ContentTemplate>
+            </asp:UpdatePanel>
+   
     
 
  

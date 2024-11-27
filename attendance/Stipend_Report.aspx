@@ -54,11 +54,21 @@
             </div>
         </div>
     </div>
+
       <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+
         <asp:UpdatePanel ID="uplMessage" runat="server" >
     <ContentTemplate><p class="message"  id="lblMessage" clientidmode="Static" runat="server"></p></ContentTemplate>
 </asp:UpdatePanel>
+       <asp:UpdatePanel ID="up1" runat="server" UpdateMode="Conditional">
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="btnPreview" />
+                        <asp:PostBackTrigger ControlID="btnExport" />
+                      
+                       
+                    </Triggers>
+                    <ContentTemplate>
     <div class="card-center">
         <div class="rowx">
             <div class="col-4">
@@ -80,9 +90,9 @@
             </div>
         </div>
     </div>
-   
 
-    <div>
+
+                           <div>
         <asp:GridView runat="server" ID="gvstipendList" AutoGenerateColumns="false" CssClass="table">
             <Columns>
                 <asp:TemplateField HeaderText="SL">
@@ -101,4 +111,8 @@
             </Columns>
         </asp:GridView>
     </div>
+   </ContentTemplate>
+           </asp:UpdatePanel>
+
+ 
 </asp:Content>
