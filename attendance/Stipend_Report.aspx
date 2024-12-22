@@ -93,6 +93,7 @@
 
 
                            <div>
+<%--                              gridview--%>
         <asp:GridView runat="server" ID="gvstipendList" AutoGenerateColumns="false" CssClass="table">
             <Columns>
                 <asp:TemplateField HeaderText="SL">
