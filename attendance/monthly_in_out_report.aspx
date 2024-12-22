@@ -104,8 +104,8 @@
                                         <td colspan="5">
                                             <asp:RadioButtonList ID="rblReportType" runat="server" AutoPostBack="True" Font-Bold="true" RepeatDirection="Horizontal">
                                                 <asp:ListItem Selected="True" Text="Log in-out" Value="0"></asp:ListItem>
-                                                <asp:ListItem Text="Attendance status" Value="1"></asp:ListItem>
-                                                <asp:ListItem Text="Attendance summary" Value="2"></asp:ListItem>
+                                                <%--<asp:ListItem Text="Attendance status" Value="1"></asp:ListItem>--%>
+                                                <asp:ListItem Text="Attendance Status With summary" Value="2"></asp:ListItem>
                                                 <asp:ListItem Text="Job Card" Value="3"></asp:ListItem>
                                                 <asp:ListItem Text="Job Card New" Value="5"></asp:ListItem>
                                                 <asp:ListItem Text="Only W &amp; H" Value="4"></asp:ListItem>
