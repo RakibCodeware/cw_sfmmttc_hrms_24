@@ -400,7 +400,8 @@ namespace SigmaERP.classes
                                            
 
                                             if (dtPunch != null && dtPunch.Rows.Count > 0)
-                                            { bool OnePunchPresent = Glory.getDBName()== "cw_hrms_tmc_hospital"?true:false;
+                                            {
+                                                bool OnePunchPresent = Glory.getDBName()== "cw-hrms-sfmmttc" ? true:false;
                                                 
                                                 _attRecord = _attCommon.GetAttStatus(_attRecord, DateTime.Parse(dtPunch.Rows[0]["PunchTime"].ToString()), DateTime.Parse(dtPunch.Rows[dtPunch.Rows.Count - 1]["PunchTime"].ToString()),rosterInfo , TimeSpan.Parse(othersetting[3]), TimeSpan.Parse(othersetting[5]), OnePunchPresent, dtEmpInfo.Rows[i]["EmpDutyType"].ToString());
 
