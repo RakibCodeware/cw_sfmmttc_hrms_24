@@ -2245,7 +2245,7 @@ namespace SigmaERP.All_Report
                 string[] getMonth = monthName.Split('-');
                 string strMonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(int.Parse(getMonth[0]));
                 rpd = new ReportDocument();
-                rpd.Load(Server.MapPath("//All Report//Attendance//MonthlyAttendanceStatusSummary3For_SG.rpt"));   // pesot=Pay Slip Extra OverTime
+                rpd.Load(Server.MapPath("//All Report//Attendance//MonthlyAttendanceStatusSummary3For_SG_SFMMTTC.rpt"));   // pesot=Pay Slip Extra OverTime
                 dt = new DataTable();
                 dt = (DataTable)Session["__MonthlyLoginLogoutReport__"];
                 rpd.SetDataSource(dt);
