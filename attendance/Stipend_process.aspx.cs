@@ -100,7 +100,7 @@ namespace SigmaERP.attendance
                     presntRation = (presntDays * 100) / activeDays;
                 }
 
-                if (presntRation >= 10)
+                if (presntRation >= 80)
                 {
                     // Add a new row to the DataTable
                     DataRow row = stipendDataTable.NewRow();
@@ -264,9 +264,12 @@ namespace SigmaERP.attendance
                     int presentDaysInt = int.Parse(presentDays);
                     decimal presentRatioDecimal = decimal.Parse(presentRatio);
                     decimal amountDecimal = decimal.Parse(stipend_amount);
-
-                    string insertQuery = "Insert into StudentMonthlyStipend (StudentId,CourseID,StartDate,EndDate,ActiveDays,WHDays,PresentDays,PresentRatio,Amount) values('" + studenId + "'," + courseId + ",'" + startDate + "','" + endDate + "'," + activeDaysInt + "," + whDaysInt + "," + presentDaysInt + ",'" + presentRatioDecimal + "'," + amountDecimal + ")";
-                    CRUD.ExecuteReturnID(insertQuery);
+                    if (presentRatioDecimal >= 80)
+                    {
+                        string insertQuery = "Insert into StudentMonthlyStipend (StudentId,CourseID,StartDate,EndDate,ActiveDays,WHDays,PresentDays,PresentRatio,Amount) values('" + studenId + "'," + courseId + ",'" + startDate + "','" + endDate + "'," + activeDaysInt + "," + whDaysInt + "," + presentDaysInt + ",'" + presentRatioDecimal + "'," + amountDecimal + ")";
+                        CRUD.ExecuteReturnID(insertQuery);
+                    }
+             
                     
 
                 }
