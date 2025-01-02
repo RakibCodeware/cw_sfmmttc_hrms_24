@@ -198,7 +198,7 @@ namespace SigmaERP.classes
 
                 DataTable dt = new DataTable();
                 if (index == 0) { 
-                    query = "SELECT        EmpId, substring(EmpCardNo,8,15) as EmpCardNo, EmpName,Address,GId,GName, SUM(CASE DATEPART(day, AttDate) WHEN 1 THEN code ELSE 0 END) AS [1], SUM(CASE DATEPART(day, AttDate) WHEN 2 THEN code ELSE 0 END) AS [2]," +
+                    query = "SELECT        EmpId, substring(EmpCardNo,8,15) as EmpCardNo, CONVERT(VARCHAR(10),CourseStartDate, 105) +'_' + CONVERT(VARCHAR(10),CourseEndDate, 105) as DsgName, EmpName,EmpName,Address,GId,GName, SUM(CASE DATEPART(day, AttDate) WHEN 1 THEN code ELSE 0 END) AS [1], SUM(CASE DATEPART(day, AttDate) WHEN 2 THEN code ELSE 0 END) AS [2]," +
                          "SUM(CASE DATEPART(day, AttDate) WHEN 3 THEN code ELSE 0 END) AS [3], SUM(CASE DATEPART(day, AttDate) WHEN 4 THEN code ELSE 0 END) AS [4], SUM(CASE DATEPART(day, AttDate) " +
                          "WHEN 5 THEN code ELSE 0 END) AS [5], SUM(CASE DATEPART(day, AttDate) WHEN 6 THEN code ELSE 0 END) AS [6], SUM(CASE DATEPART(day, AttDate) WHEN 7 THEN code ELSE 0 END) AS [7]," +
                          "SUM(CASE DATEPART(day, AttDate) WHEN 8 THEN code ELSE 0 END) AS [8], SUM(CASE DATEPART(day, AttDate) WHEN 9 THEN code ELSE 0 END) AS [9], SUM(CASE DATEPART(day, AttDate) " +
@@ -214,7 +214,7 @@ namespace SigmaERP.classes
                          "(SUM(case Code when 207  then 1 else 0 end)+SUM(case Code when 223  then 1 else 0 end)+SUM(case Code when 205  then 1 else 0 end)+SUM(case Code when 217  then 1 else 0 end)) as LV " +
                          "   FROM            dbo.v_tblAttendanceRecord " +
                          "   Where CompanyId " + CompanyId + " AND DptId " + DepartmentList + " " + EmpTypeID + " AND MONTH(ATTDate) ='" + Month + "' AND Year(ATTDate)='" + Year + "'" +
-                         "   GROUP BY EmpId, EmpCardNo, EmpName, DsgName, DptId, DptName,GId,GName, CompanyId, CompanyName,Address,CustomOrdering  " +
+                         "   GROUP BY EmpId, EmpCardNo,CourseStartDate,CourseEndDate, EmpName, DsgName, DptId, DptName,GId,GName, CompanyId, CompanyName,Address,CustomOrdering  " +
                         " order by convert(int,DptId), convert(int,GId),CustomOrdering";
                 sqlDB.fillDataTable(query, dt);
             }
